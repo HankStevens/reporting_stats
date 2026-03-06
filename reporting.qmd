@@ -1,0 +1,317 @@
+---
+title: "Reporting Statistical Methods and Results"
+format: html
+---
+
+
+> *Hank Stevens<sup>1,2</sup>, Tereza Jezkova<sup>1,2</sup>, Jessica
+> McCarty<sup>1,3</sup>*
+>
+> *<sup>1</sup> Ph.D. Program in Ecology, Evolution, and Environmental
+> Biology, Miami University, Oxford, OH, USA*
+>
+> *<sup>2</sup> Department of Biology, Miami University, Oxford, OH,
+> USA*
+>
+> *<sup>3</sup> Department of Geography, Miami University, Oxford, OH,
+> USA (now at NASA-Ames)*
+
+## Reporting results
+
+Communicate results in a way that makes sense to other people.
+
+### Convey biological meaning
+
+> Kathy Cottingham, Michael Crawley, and lots of others advise us to
+> express quantitative results in a biologically meaningful way and
+> provide both estimates and confidence intervals:
+
+- “Leaf area increased by an average of 20% (95% CI, 15.7-28.4%).”
+
+- “Stem density decreased with increasing soil CEC, declining by 9.4
+  stems ha<sup>-1</sup> per 5 milliequivalents / 100 g soil (95 % CI:
+  5.3-14.9 stems ha<sup>-1</sup>)”
+
+> You should <u>not</u> state simply that “leaf increased significantly”
+> or that the “relationship between stem density and CEC was
+> significant”. Don’t waste the space -- just tell us what the
+> relationship was. Convey meaning.
+
+### Beyond p-values
+
+> In 2019, The American Statistical Association devoted an issue of
+> their journal, *The American Statistician*, on [<u>“Moving to a World
+> Beyond ‘p \<
+> 0.05’”</u>](https://doi.org/10.1080/00031305.2019.1583913). They
+> state,
+>
+> *In sum, “statistically significant”— don’t say it and don’t use it.*
+
+The authors ask us to “ATOM”:
+
+1.  **<u>A</u>**ccept uncertainty
+
+2.  Be **<u>T</u>**houghtful
+
+3.  Be **<u>O</u>**pen and transparent
+
+4.  Be **<u>M</u>**odest
+
+> We strongly encourage you to use the link above to access the opening
+> editorial for that issue of the journal. All that their advice
+> entails, and what practical steps we take if we no longer can say
+> “statistically significant”, is waaaay beyond the scope of this short
+> document. Nonetheless, one step we can all take now is to ***convey
+> biological meaning*** when we report our results (see next section,
+> below).
+>
+> Remember that most of the analyses we do in ecology are, strictly
+> speaking, exploratory. The only confirmatory analyses we do are those
+> that are entirely prescribed beforehand. Your transformation of the
+> response variable and and your experimental design would have to be
+> determined before you even do the experiment and witness the data. Any
+> adjustment you make after that will tend to result in
+> anti-conservative *P* values. Every decision after we have the data in
+> hand as we try to figure out what is going in our data, in our study
+> system, will tend to increase this anti-conservative bias. The more
+> tests we do with a particular data set -- even if our tests are
+> pre-planned -- the more likely we are to mistakenly reject the null
+> hypothesis. Do what you can to use methods that do not rely on tests
+> that are designed to be confirmatory.
+>
+> An example: In the afore mentioned special issue, [<u>Benjamin and
+> Berger (2019)</u>](https://doi.org/10.1080/00031305.2018.1543135)
+> suggest using the Bayes factor bound, BFB (Held and Ott 2018) to
+> convey the strength of evidence in favor of an alternative (H1) over
+> the null (H0). Under a wide range of conditions, it is the upper bound
+> on the odds ratio in favor of H1. An alternative they suggest is the
+> upper bound on the probability in favor of H1,
+> PR<sup>U</sup>(H1\|data), which is just a function of BFB. [<u>I wrote
+> a simple R script to calculate BFB and
+> PR<sup>U</sup>(H1\|data).</u>](https://drive.google.com/open?id=1e2hCQcwq5FpdC4-L2eJwiy49RK6rWB9h)
+> Will ecologists use this or something like it? Only the Shadow knows….
+> More importantly, our results should [<u>convey
+> meaning</u>](#tradeoffs-in-graphical-displays).
+
+### Say what you did, not what software functions you used
+
+> To the extent possible, explain what you did in computational,
+> statistical, or mathematical terms, without relying on software
+> jargon. For instance, you should say, “I performed a one-way ANOVA”
+> rather than “I used the aov() command in R.” I have noted that many
+> students fall into the latter habit when describing GIS analyses,
+> e.g., “I used the Buffer command in ESRI ArcGIS” or some such phrase.
+> That doesn’t seem right to me, and a quick perusal of 4 articles in
+> *Ecology* that used GIS tools included no such language. *The authors
+> explained what they did in computational, statistical, or mathematical
+> terms*, and merely cited software packages or computing languages that
+> allowed them to do those calculations. Nonetheless, I cannot speak
+> about conventions in other journals that publish studies relying on
+> GIS. I urge you to consult recent issues of relevant journals for
+> articles that use GIS methods to see how successful authors describe
+> their methods. These days, you can always offer the journal an online
+> supplemental with your code. When appropriate, consult with relevant
+> faculty whose expertise lies in such an area; offer acknowledge or
+> co-authorship if the situation warrants it.
+>
+> If you transform your data prior to analysis, explain why you
+> transformed it, and indicate how much the transformation helped.
+> And...refer to the analysis as “\[analysis name\] with
+> \[transformation\] data”, e.g., “regression with both variables
+> log-transformed” or “two-way analysis of variance with the response
+> transformed using the arcsine of the square root of y.”
+
+### Tradeoffs in graphical displays
+
+> What is the goal of a graph? Is it to reveal an analysis or a result?
+> Assess assumptions or provide predictions? Regardless, the graphical
+> display of a result represents a tradeoff between showing us the
+> supported finding versus showing us enough data to help us understand
+> the basis of the result and the biological implications. Authors need
+> to make conscious decisions about their intent. Below are a few
+> examples of choices and potential problems.
+>
+> *Should you show us your data?* The subfigures A, D, G are all based
+> on the same seven x,y pairs, but we add progressively more information
+> from A to D to G. The same is true for the center column using 1000
+> x,y pairs with normally distributed *y* (B, E, H), and for the right
+> column using 1000 x,y pairs but with lognormally distributed *y* (C,
+> F, G).
+
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 32%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align: center;">Dataset A</td>
+<td style="text-align: center;">Dataset B</td>
+<td style="text-align: center;">Dataset C</td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: center;"><img src="media/image1.png"
+style="width:5.48438in;height:5.48438in" /></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: center;"><blockquote>
+<p>Figure 1. For each dataset (A-C), we can reveal little information
+(first row) or a lot of information (bottom row).</p>
+</blockquote></td>
+</tr>
+</tbody>
+</table>
+
+> *Which experimental factors should you plot?* Another important issue
+> to consider is whether to plot all treatment combinations, or just
+> those that are supported by statistical tests. For instance, if you
+> predict, *a priori*, that factors A and B interact multiplicatively,
+> but your model (ANOVA) suggests that only A affects the response,
+> should you graph your data in a way that shows both A and B, or show
+> only the effect of A? Inquiring minds want to know and often disagree.
+
+<img src="media/image2.png" style="width:4.78646in;height:3.58984in" />
+
+> Figure 2. Our experiment tested the overall and interactive effects of
+> factors A and B on a response. ANOVA showed support for an effect of
+> A, but *not* for effects of B nor an interaction. Should you plot
+> everything you investigated and let us see the various outcomes (A,
+> C), or plot only the effect that has statistical support (B,D)?
+>
+> *Dynamite plots are plots that can blow up in your face.* See, for
+> instance,
+
+[<u>https://simplystatistics.org/posts/2019-02-21-dynamite-plots-must-die/</u>](https://simplystatistics.org/posts/2019-02-21-dynamite-plots-must-die/)
+
+##  
+
+## Bayesian Analysis Reporting Guidelines
+
+Good luck. For a very thorough list of considerations, see Kruschke,
+John K. “Bayesian Analysis Reporting Guidelines.” *Nature Human
+Behaviour* 5, no. 10 (October 2021): 1282–91.
+[<u>https://doi.org/10.1038/s41562-021-01177-7</u>](https://doi.org/10.1038/s41562-021-01177-7).
+He offers very thorough guidelines. He has a good textbook as well.
+(*Doing Bayesian Data Analysis: a tutorial using R, JAGS, and Stan. 2nd.
+ed. 2015. Academic Press / Elsevier.* ISBN: 9780124058880)
+
+## Citing R and added packages
+
+> If you use R, cite it.
+>
+> If you use R, use the correct citation.
+
+### Use citation()
+
+> You can find the correct citation for R by typing citation() at the R
+> prompt:
+>
+> \> citation()
+>
+> *If you generate statistical results using a package other than the
+> included **stats** package, you should cite it.* To cite an R package
+> other than the base package or stats package, type
+> citation(“package_name”), e.g.,
+>
+> \> citation(package = “nlme”)
+>
+> and it will give you the source you should cite.
+>
+> People tend to cite R packages that help generate quantitative results
+> and not cite packages used for display. Ask yourself, do you cite
+> Adobe Photoshop™ if you use it to make a pretty graphic? Do you cite
+> Microsoft Word™ when you write your manuscript? Your call.
+
+### You should not cite RStudio
+
+> RStudio is just a GUI, or wrapper, for R. When you download RStudio,
+> you are not downloading R. To cite RStudio might be like citing
+> Microsoft Word for generating ideas. Citing RStudio might be like
+> citing the Mac OS or Windows, “All statistics were performed using
+> Windows 8.0.3.” The operating system or GUI version you use does not
+> usually matter, with some important exceptions that we discuss next.
+>
+> There are some very limited exceptions to the “Do not cite RStudio”
+> rule. <span class="mark">The only exception is if you are publishing
+> in a data-specific or models-specific journal in which you must list
+> which version of RStudio and the computer operating system on which
+> you tested your own software. Any time you *test software* or *code*,
+> you need to cite the underlying hardware and software you use.</span>
+>
+> <span class="mark">Likewise, anyone maintaining a GitHub page or other
+> repository should list that information in all the shared codes,
+> commits, and ReadMe documents that are shared for larger scientific
+> use. Be ready to have that information to share with audience members
+> during oral and poster presentations.</span>
+
+## Phylogenetic analyses
+
+> *Contributed by Tereza Jezkova*
+
+### Building trees
+
+> When constructing a phylogenetic tree, you should report the
+> following:
+
+1)  What genes and how many base pairs were used to reconstruct a tree
+
+2)  What model was used (e.g. HKY+I+G) and how was the model selected
+
+3)  Whether you partitioned by gene, codon, or both
+
+4)  What method was used to build a tree (e.g. Maximum Parsimony,
+    Maximum Likelihood, etc.)
+
+5)  How was the node support assessed (e.g., using bootstrapping,
+    posterior probabilities)
+
+### Preparing figures
+
+> When preparing a tree figure for a manuscript, remember to:
+
+1)  Indicate the support of nodes. If possible, write all support values
+    directly on the tree. Alternatively, you can indicate all highly
+    supported nodes (based on your criterion) by e.g., placing dark dots
+    on them.
+
+2)  Include branch length units. These are usually either percent of
+    divergence or time.
+
+## *Points of Significance* - Authoritative sources for biologists
+
+A really good review of many of these ideas and more:
+
+[<u>Butler, Ruth. 2021. Popularity leads to bad habits: Alternatives to
+“the statistics” routine of significance, “alphabet soup” and dynamite
+plots.</u> *<u>Annals of Applied Biology</u>* <u>180:182–195. DOI:
+10.1111/aab.127341</u>](https://doi-org.proxy.lib.miamioh.edu/10.1111/aab.12734).
+
+> [<u>Point of
+> Significance</u>](https://www.nature.com/collections/qghhqm/pointsofsignificance)
+> is a nice collection of authoritative articles for biologists that
+> provide introductions to a wide variety of statistical topics such as,
+
+- *t*-tests
+
+- replication
+
+- split-plot ANOVA
+
+- Bayes theorem
+
+- logistic regression
+
+- regression diagnostics
+
+and much, much more.
+
+See also:
+
+Popovic, G., Mason, T. J., Drobniak, S. M., Marques, T. A., Potts, J.,
+Joo, R., Altwegg, R., Burns, C. C. I., McCarthy, M. A., Johnston, A.,
+Nakagawa, S., McMillan, L., Devarajan, K., Taggart, P. L., Wunderlich,
+A., Mair, M. M., Martínez-Lanfranco, J. A., Lagisz, M., & Pottier, P.
+(2024). Four principles for improved statistical ecology. *Methods in
+Ecology and Evolution*, 15, 266–281.
+[<u>https://doi-org.proxy.lib.miamioh.edu/10.1111/2041-210X.14270</u>](https://doi-org.proxy.lib.miamioh.edu/10.1111/2041-210X.14270)
