@@ -130,12 +130,12 @@ gtag('config', 'G-W2J81KX3WZ', { 'anonymize_ip': true});
   <li><a href="#reporting-results" id="toc-reporting-results" class="nav-link active" data-scroll-target="#reporting-results">Reporting results</a>
   <ul class="collapse">
   <li><a href="#convey-biological-meaning" id="toc-convey-biological-meaning" class="nav-link" data-scroll-target="#convey-biological-meaning">Convey biological meaning</a></li>
+  <li><a href="#tradeoffs-in-graphical-displays" id="toc-tradeoffs-in-graphical-displays" class="nav-link" data-scroll-target="#tradeoffs-in-graphical-displays">Tradeoffs in graphical displays</a></li>
   <li><a href="#beyond-p-values" id="toc-beyond-p-values" class="nav-link" data-scroll-target="#beyond-p-values">Beyond p-values</a></li>
   <li><a href="#good-practice-in-general" id="toc-good-practice-in-general" class="nav-link" data-scroll-target="#good-practice-in-general">Good practice, in general</a></li>
   </ul></li>
   <li><a href="#reporting-methods-say-what-you-did-not-what-software-functions-you-used." id="toc-reporting-methods-say-what-you-did-not-what-software-functions-you-used." class="nav-link" data-scroll-target="#reporting-methods-say-what-you-did-not-what-software-functions-you-used.">Reporting Methods: Say what you did, not what software functions you used.</a>
   <ul class="collapse">
-  <li><a href="#tradeoffs-in-graphical-displays" id="toc-tradeoffs-in-graphical-displays" class="nav-link" data-scroll-target="#tradeoffs-in-graphical-displays">Tradeoffs in graphical displays</a></li>
   <li><a href="#bayesian-analysis-reporting-guidelines" id="toc-bayesian-analysis-reporting-guidelines" class="nav-link" data-scroll-target="#bayesian-analysis-reporting-guidelines">Bayesian Analysis Reporting Guidelines</a></li>
   </ul></li>
   <li><a href="#citing-r-and-added-packages" id="toc-citing-r-and-added-packages" class="nav-link" data-scroll-target="#citing-r-and-added-packages">Citing R and added packages</a>
@@ -189,31 +189,6 @@ gtag('config', 'G-W2J81KX3WZ', { 'anonymize_ip': true});
 </ul>
 <p>You should <u>not</u> state simply that “leaf increased significantly” or that the “relationship between stem density and CEC was&nbsp;significant”. Don’t waste the space – just tell us what the&nbsp;relationship was. Convey meaning.</p>
 </section>
-<section id="beyond-p-values" class="level2">
-<h2 class="anchored" data-anchor-id="beyond-p-values">Beyond p-values</h2>
-<p>In 2019, The American Statistical Association devoted an issue of their journal, <em>The American Statistician</em>, on <a href="https://doi.org/10.1080/00031305.2019.1583913"><u>“Moving to a World&gt; Beyond ‘p &lt;&gt; 0.05’”</u></a>. They&gt; state,</p>
-<p><em>In sum, “statistically significant”— don’t say it and don’t use it.</em></p>
-<p>The authors ask us to “ATOM”:</p>
-<ol type="1">
-<li><strong><u>A</u></strong>ccept uncertainty</li>
-<li>Be <strong><u>T</u></strong>houghtful</li>
-<li>Be <strong><u>O</u></strong>pen and transparent</li>
-<li>Be <strong><u>M</u></strong>odest</li>
-</ol>
-<p>We strongly encourage you to use the link above to access the opening editorial for that issue of the journal. All that their advice entails, and what practical steps we take if we no longer can say “statistically significant”, is waaaay beyond the scope of this short document. Nonetheless, one step we can all take now is to <strong><em>convey biological meaning</em></strong> when we report our results (see next section, below).</p>
-<p>Remember that most of the analyses we do in ecology are, strictly speaking, exploratory. The only confirmatory analyses we do are those that are entirely prescribed beforehand. Your transformation of the response variable and and your experimental design would have to be determined before you even do the experiment and witness the data. Any adjustment you make after that will tend to result in anti-conservative <em>P</em> values. Every decision after we have the data in hand as we try to figure out what is going in our data, in our study system, will tend to increase this anti-conservative bias. The more tests we do with a particular data set – even if our tests are pre-planned – the more likely we are to mistakenly reject the null hypothesis. Do what you can to use methods that do not rely on tests that are designed to be confirmatory.</p>
-<p>An example: In the afore mentioned special issue, <a href="https://doi.org/10.1080/00031305.2018.1543135"><u>Benjamin and Berger (2019)</u></a> suggest using the Bayes factor bound, BFB (Held and Ott 2018) to convey the strength of evidence in favor of an alternative (H1) over the null (H0). Under a wide range of conditions, it is the upper bound on the odds ratio in favor of H1. An alternative they suggest is the upper bound on the probability in favor of H1, PR<sup>U</sup>(H1|data), which is just a function of BFB. <a href="https://drive.google.com/open?id=1e2hCQcwq5FpdC4-L2eJwiy49RK6rWB9h"><u>I wrote&gt; a simple R script to calculate BFB and&gt; PR<sup>U</sup>(H1|data).</u></a> Will ecologists use this or something like it? Only the Shadow knows…. More importantly, our results should [<u>convey&gt; meaning</u>]</p>
-</section>
-<section id="good-practice-in-general" class="level2">
-<h2 class="anchored" data-anchor-id="good-practice-in-general">Good practice, in general</h2>
-<p><a href="https://doi-org.proxy.lib.miamioh.edu/10.1111/aab.12734">Butler, Ruth. 2021. Popularity leads to bad habits: Alternatives to“the statistics” routine of significance, “alphabet soup” and dynamiteplots. <em>Annals of Applied Biology</em> 180:182–195. DOI:10.1111/aab.127341</a>.</p>
-<p>Popovic, G., Mason, T. J., Drobniak, S. M., Marques, T. A., Potts, J., Joo, R., Altwegg, R., Burns, C. C. I., McCarthy, M. A., Johnston, A., Nakagawa, S., McMillan, L., Devarajan, K., Taggart, P. L., Wunderlich, A., Mair, M. M., Martínez-Lanfranco, J. A., Lagisz, M., &amp; Pottier, P. (2024). Four principles for improved statistical ecology. <em>Methods in Ecology and Evolution</em>, 15, 266–281. <a href="https://doi-org.proxy.lib.miamioh.edu/10.1111/2041-210X.14270"><u>https://doi-org.proxy.lib.miamioh.edu/10.1111/2041-210X.14270</u></a></p>
-</section>
-</section>
-<section id="reporting-methods-say-what-you-did-not-what-software-functions-you-used." class="level1">
-<h1>Reporting Methods: Say what you did, not what software functions you used.</h1>
-<p>To the extent possible, explain what you did in computational, statistical, or mathematical terms, without relying on software jargon. For instance, you should say, “I performed a one-way ANOVA” rather than “I used the aov() command in R.” I have noted that many students fall into the latter habit when describing GIS analyses, e.g., “I used the Buffer command in ESRI ArcGIS” or some such phrase. That doesn’t seem right to me, and a quick perusal of 4 articles in <em>Ecology</em> that used GIS tools included no such language. <em>The authors explained what they did in computational, statistical, or mathematical terms</em>, and merely cited software packages or computing languages that allowed them to do those calculations. Nonetheless, I cannot speak about conventions in other journals that publish studies relying on GIS. I urge you to consult recent issues of relevant journals for articles that use GIS methods to see how successful authors describe their methods. These days, you can always offer the journal an online supplemental with your code. When appropriate, consult with relevant faculty whose expertise lies in such an area; offer acknowledge or co-authorship if the situation warrants it.</p>
-<p>If you transform your data prior to analysis, explain why you transformed it, and indicate how much the transformation helped. And…refer to the analysis as “[analysis name] with [transformation] data”, e.g., “regression with both variables log-transformed” or “two-way analysis of variance with the response transformed using the arcsine of the square root of y.”</p>
 <section id="tradeoffs-in-graphical-displays" class="level2">
 <h2 class="anchored" data-anchor-id="tradeoffs-in-graphical-displays">Tradeoffs in graphical displays</h2>
 <p>What is the goal of a graph? Is it to reveal an analysis or a result? Assess assumptions or provide predictions? Regardless, the graphical display of a result represents a tradeoff between showing us the supported finding versus showing us enough data to help us understand the basis of the result and the biological implications. Authors need to make conscious decisions about their intent. Below are a few examples of choices and potential problems.</p>
@@ -258,6 +233,31 @@ Figure 1. For each dataset (A-C), we can reveal little information (first row) o
 <p><em>Dynamite plots are plots that can blow up in your face.</em> See, for instance,</p>
 <p><a href="https://simplystatistics.org/posts/2019-02-21-dynamite-plots-must-die/"><u>https://simplystatistics.org/posts/2019-02-21-dynamite-plots-must-die/</u></a></p>
 </section>
+<section id="beyond-p-values" class="level2">
+<h2 class="anchored" data-anchor-id="beyond-p-values">Beyond p-values</h2>
+<p>In 2019, The American Statistical Association devoted an issue of their journal, <em>The American Statistician</em>, on <a href="https://doi.org/10.1080/00031305.2019.1583913"><u>“Moving to a World&gt; Beyond ‘p &lt;&gt; 0.05’”</u></a>. They&gt; state,</p>
+<p><em>In sum, “statistically significant”— don’t say it and don’t use it.</em></p>
+<p>The authors ask us to “ATOM”:</p>
+<ol type="1">
+<li><strong><u>A</u></strong>ccept uncertainty</li>
+<li>Be <strong><u>T</u></strong>houghtful</li>
+<li>Be <strong><u>O</u></strong>pen and transparent</li>
+<li>Be <strong><u>M</u></strong>odest</li>
+</ol>
+<p>We strongly encourage you to use the link above to access the opening editorial for that issue of the journal. All that their advice entails, and what practical steps we take if we no longer can say “statistically significant”, is waaaay beyond the scope of this short document. Nonetheless, one step we can all take now is to <strong><em>convey biological meaning</em></strong> when we report our results (see next section, below).</p>
+<p>Remember that most of the analyses we do in ecology are, strictly speaking, exploratory. The only confirmatory analyses we do are those that are entirely prescribed beforehand. Your transformation of the response variable and and your experimental design would have to be determined before you even do the experiment and witness the data. Any adjustment you make after that will tend to result in anti-conservative <em>P</em> values. Every decision after we have the data in hand as we try to figure out what is going in our data, in our study system, will tend to increase this anti-conservative bias. The more tests we do with a particular data set – even if our tests are pre-planned – the more likely we are to mistakenly reject the null hypothesis. Do what you can to use methods that do not rely on tests that are designed to be confirmatory.</p>
+<p>An example: In the afore mentioned special issue, <a href="https://doi.org/10.1080/00031305.2018.1543135"><u>Benjamin and Berger (2019)</u></a> suggest using the Bayes factor bound, BFB (Held and Ott 2018) to convey the strength of evidence in favor of an alternative (H1) over the null (H0). Under a wide range of conditions, it is the upper bound on the odds ratio in favor of H1. An alternative they suggest is the upper bound on the probability in favor of H1, PR<sup>U</sup>(H1|data), which is just a function of BFB. <a href="https://drive.google.com/open?id=1e2hCQcwq5FpdC4-L2eJwiy49RK6rWB9h"><u>I wrote&gt; a simple R script to calculate BFB and&gt; PR<sup>U</sup>(H1|data).</u></a> Will ecologists use this or something like it? Only the Shadow knows…. More importantly, our results should [<u>convey&gt; meaning</u>]</p>
+</section>
+<section id="good-practice-in-general" class="level2">
+<h2 class="anchored" data-anchor-id="good-practice-in-general">Good practice, in general</h2>
+<p><a href="https://doi-org.proxy.lib.miamioh.edu/10.1111/aab.12734">Butler, Ruth. 2021. Popularity leads to bad habits: Alternatives to“the statistics” routine of significance, “alphabet soup” and dynamiteplots. <em>Annals of Applied Biology</em> 180:182–195. DOI:10.1111/aab.127341</a>.</p>
+<p>Popovic, G., Mason, T. J., Drobniak, S. M., Marques, T. A., Potts, J., Joo, R., Altwegg, R., Burns, C. C. I., McCarthy, M. A., Johnston, A., Nakagawa, S., McMillan, L., Devarajan, K., Taggart, P. L., Wunderlich, A., Mair, M. M., Martínez-Lanfranco, J. A., Lagisz, M., &amp; Pottier, P. (2024). Four principles for improved statistical ecology. <em>Methods in Ecology and Evolution</em>, 15, 266–281. <a href="https://doi-org.proxy.lib.miamioh.edu/10.1111/2041-210X.14270"><u>https://doi-org.proxy.lib.miamioh.edu/10.1111/2041-210X.14270</u></a></p>
+</section>
+</section>
+<section id="reporting-methods-say-what-you-did-not-what-software-functions-you-used." class="level1">
+<h1>Reporting Methods: Say what you did, not what software functions you used.</h1>
+<p>To the extent possible, explain what you did in computational, statistical, or mathematical terms, without relying on software jargon. For instance, you should say, “I performed a one-way ANOVA” rather than “I used the aov() command in R.” I have noted that many students fall into the latter habit when describing GIS analyses, e.g., “I used the Buffer command in ESRI ArcGIS” or some such phrase. That doesn’t seem right to me, and a quick perusal of 4 articles in <em>Ecology</em> that used GIS tools included no such language. <em>The authors explained what they did in computational, statistical, or mathematical terms</em>, and merely cited software packages or computing languages that allowed them to do those calculations. Nonetheless, I cannot speak about conventions in other journals that publish studies relying on GIS. I urge you to consult recent issues of relevant journals for articles that use GIS methods to see how successful authors describe their methods. These days, you can always offer the journal an online supplemental with your code. When appropriate, consult with relevant faculty whose expertise lies in such an area; offer acknowledge or co-authorship if the situation warrants it.</p>
+<p>If you transform your data prior to analysis, explain why you transformed it, and indicate how much the transformation helped. And…refer to the analysis as “[analysis name] with [transformation] data”, e.g., “regression with both variables log-transformed” or “two-way analysis of variance with the response transformed using the arcsine of the square root of y.”</p>
 <section id="bayesian-analysis-reporting-guidelines" class="level2">
 <h2 class="anchored" data-anchor-id="bayesian-analysis-reporting-guidelines">Bayesian Analysis Reporting Guidelines</h2>
 <p>Good luck. For a very thorough list of considerations, see Kruschke,John K. “Bayesian Analysis Reporting Guidelines.” <em>Nature HumanBehaviour</em> 5, no. 10 (October 2021): 1282–91.<a href="https://doi.org/10.1038/s41562-021-01177-7"><u>https://doi.org/10.1038/s41562-021-01177-7</u></a>.He offers very thorough guidelines. He has a good textbook as well.(<em>Doing Bayesian Data Analysis: a tutorial using R, JAGS, and Stan. 2nd.ed. 2015. Academic Press / Elsevier.</em> ISBN: 9780124058880)</p>
