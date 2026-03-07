@@ -10,6 +10,8 @@ website:
         text: Home
       - about.qmd
       - reporting.qmd
+  google-analytics:
+    tracking-id: "G-J0R6F7XN66"
 
 format:
   html:
