@@ -85,7 +85,7 @@ To the extent possible, explain what you did in computational, statistical, or m
 <td style="text-align: center;">Dataset C</td>
 </tr>
 <tr>
-<td colspan="3" style="text-align: center;"><img src="media/image1.png"
+<td colspan="3" style="text-align: center;"><img src="scatterplots.png"
 style="width:5.48438in;height:5.48438in" /></td>
 </tr>
 <tr>
@@ -99,7 +99,7 @@ style="width:5.48438in;height:5.48438in" /></td>
 
  *Which experimental factors should you plot?* Another important issue to consider is whether to plot all treatment combinations, or just those that are supported by statistical tests. For instance, if you predict, *a priori*, that factors A and B interact multiplicatively, but your model (ANOVA) suggests that only A affects the response, should you graph your data in a way that shows both A and B, or show only the effect of A? Inquiring minds want to know and often disagree.
 
-<img src="media/image2.png" style="width:4.78646in;height:3.58984in" /
+<img src="interaction_plots.png" style="width:4.78646in;height:3.58984in" /img>
 
  Figure 2. Our experiment tested the overall and interactive effects of factors A and B on a response. ANOVA showed support for an effect of A, but *not* for effects of B nor an interaction. Should you plot everything you investigated and let us see the various outcomes (A, C), or plot only the effect that has statistical support (B,D)?
 
