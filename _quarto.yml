@@ -11,7 +11,7 @@ website:
       - about.qmd
       - reporting.qmd
   google-analytics:
-    tracking-id: "G-J0R6F7XN66"
+    tracking-id: "G-W2J81KX3WZ"
 
 format:
   html:
