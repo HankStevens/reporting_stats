@@ -18,7 +18,7 @@
     "href": "reporting.html#convey-biological-meaning",
     "title": "Reporting Statistical Methods and Results",
     "section": "Convey biological meaning",
-    "text": "Convey biological meaning\nKathy Cottingham, Michael Crawley, and lots of others advise us to express quantitative results in a biologically meaningful way and provide both estimates and confidence intervals:- “Leaf area increased by an average of 20% (95% CI, 15.7-28.4%).”\n\n“Stem density decreased with increasing soil CEC, declining by 9.4 stems ha-1 per 5 milliequivalents / 100 g soil (95 % CI: 5.3-14.9 stems ha-1)”\n\nYou should not state simply that “leaf increased significantly” or that the “relationship between stem density and CEC was significant”. Don’t waste the space – just tell us what the relationship was. Convey meaning."
+    "text": "Convey biological meaning\nKathy Cottingham, Michael Crawley, and lots of others advise us to express quantitative results in a biologically meaningful way and provide both estimates and confidence intervals:\n\n“Leaf area increased by an average of 20% (95% CI, 15.7-28.4%).”\n“Stem density decreased with increasing soil CEC, declining by 9.4 stems ha-1 per 5 milliequivalents / 100 g soil (95 % CI: 5.3-14.9 stems ha-1)”\n\nYou can do better than to state merely that “leaf area increased significantly” or worse, that the “relationship between stem density and CEC was significant”. Don’t waste the space – just tell us what the relationship was. Convey meaning."
   },
   {
     "objectID": "reporting.html#tradeoffs-in-graphical-displays",
