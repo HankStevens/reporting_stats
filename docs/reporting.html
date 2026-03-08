@@ -132,7 +132,7 @@ gtag('config', 'G-W2J81KX3WZ', { 'anonymize_ip': true});
   <li><a href="#convey-biological-meaning" id="toc-convey-biological-meaning" class="nav-link" data-scroll-target="#convey-biological-meaning">Convey biological meaning</a></li>
   <li><a href="#tradeoffs-in-graphical-displays" id="toc-tradeoffs-in-graphical-displays" class="nav-link" data-scroll-target="#tradeoffs-in-graphical-displays">Tradeoffs in graphical displays</a></li>
   <li><a href="#beyond-p-values" id="toc-beyond-p-values" class="nav-link" data-scroll-target="#beyond-p-values">Beyond p-values</a></li>
-  <li><a href="#good-practice-in-general" id="toc-good-practice-in-general" class="nav-link" data-scroll-target="#good-practice-in-general">Good practice, in general</a></li>
+  <li><a href="#more-good-practice-in-general" id="toc-more-good-practice-in-general" class="nav-link" data-scroll-target="#more-good-practice-in-general">More good practice, in general</a></li>
   </ul></li>
   <li><a href="#reporting-methods-say-what-you-did-not-what-software-functions-you-used." id="toc-reporting-methods-say-what-you-did-not-what-software-functions-you-used." class="nav-link" data-scroll-target="#reporting-methods-say-what-you-did-not-what-software-functions-you-used.">Reporting Methods: Say what you did, not what software functions you used.</a>
   <ul class="collapse">
@@ -140,8 +140,10 @@ gtag('config', 'G-W2J81KX3WZ', { 'anonymize_ip': true});
   </ul></li>
   <li><a href="#citing-r-and-added-packages" id="toc-citing-r-and-added-packages" class="nav-link" data-scroll-target="#citing-r-and-added-packages">Citing R and added packages</a>
   <ul class="collapse">
-  <li><a href="#use-citation" id="toc-use-citation" class="nav-link" data-scroll-target="#use-citation">Use citation()</a></li>
+  <li><a href="#when-you-use-r-use-citation" id="toc-when-you-use-r-use-citation" class="nav-link" data-scroll-target="#when-you-use-r-use-citation">When you use R, use citation()</a>
+  <ul class="collapse">
   <li><a href="#you-should-not-cite-rstudio-or-positron-or-jupyter-notebook" id="toc-you-should-not-cite-rstudio-or-positron-or-jupyter-notebook" class="nav-link" data-scroll-target="#you-should-not-cite-rstudio-or-positron-or-jupyter-notebook">You should not cite RStudio (or Positron or Jupyter Notebook)</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#phylogenetic-analyses" id="toc-phylogenetic-analyses" class="nav-link" data-scroll-target="#phylogenetic-analyses">Phylogenetic analyses</a>
   <ul class="collapse">
@@ -235,7 +237,7 @@ Figure 1. For each dataset (A-C), we can reveal little information (first row) o
 </section>
 <section id="beyond-p-values" class="level2">
 <h2 class="anchored" data-anchor-id="beyond-p-values">Beyond p-values</h2>
-<p>In 2019, The American Statistical Association devoted an issue of their journal, <em>The American Statistician</em>, on <a href="https://doi.org/10.1080/00031305.2019.1583913"><u>“Moving to a World&gt; Beyond ‘p &lt;&gt; 0.05’”</u></a>. They&gt; state,</p>
+<p>In 2019, The American Statistical Association devoted an issue of their journal, <em>The American Statistician</em>, on <a href="https://doi.org/10.1080/00031305.2019.1583913"><u>“Moving to a World&gt; Beyond ‘p &lt;&gt; 0.05’”</u></a>. They state,</p>
 <p><em>In sum, “statistically significant”— don’t say it and don’t use it.</em></p>
 <p>The authors ask us to “ATOM”:</p>
 <ol type="1">
@@ -244,43 +246,43 @@ Figure 1. For each dataset (A-C), we can reveal little information (first row) o
 <li>Be <strong><u>O</u></strong>pen and transparent</li>
 <li>Be <strong><u>M</u></strong>odest</li>
 </ol>
-<p>We strongly encourage you to use the link above to access the opening editorial for that issue of the journal. All that their advice entails, and what practical steps we take if we no longer can say “statistically significant”, is waaaay beyond the scope of this short document. Nonetheless, one step we can all take now is to <strong><em>convey biological meaning</em></strong> when we report our results (see next section, below).</p>
-<p>Remember that most of the analyses we do in ecology are, strictly speaking, exploratory. The only confirmatory analyses we do are those that are entirely prescribed beforehand. Your transformation of the response variable and and your experimental design would have to be determined before you even do the experiment and witness the data. Any adjustment you make after that will tend to result in anti-conservative <em>P</em> values. Every decision after we have the data in hand as we try to figure out what is going in our data, in our study system, will tend to increase this anti-conservative bias. The more tests we do with a particular data set – even if our tests are pre-planned – the more likely we are to mistakenly reject the null hypothesis. Do what you can to use methods that do not rely on tests that are designed to be confirmatory.</p>
-<p>An example: In the afore mentioned special issue, <a href="https://doi.org/10.1080/00031305.2018.1543135"><u>Benjamin and Berger (2019)</u></a> suggest using the Bayes factor bound, BFB (Held and Ott 2018) to convey the strength of evidence in favor of an alternative (H1) over the null (H0). Under a wide range of conditions, it is the upper bound on the odds ratio in favor of H1. An alternative they suggest is the upper bound on the probability in favor of H1, PR<sup>U</sup>(H1|data), which is just a function of BFB. <a href="https://drive.google.com/open?id=1e2hCQcwq5FpdC4-L2eJwiy49RK6rWB9h"><u>I wrote&gt; a simple R script to calculate BFB and&gt; PR<sup>U</sup>(H1|data).</u></a> Will ecologists use this or something like it? Only the Shadow knows…. More importantly, our results should [<u>convey&gt; meaning</u>]</p>
+<p>We strongly encourage you to use the link above to access the opening editorial for that issue of the journal. All that their advice entails, and what practical steps we take if we no longer can say “statistically significant”, is waaaay beyond the scope of this short document. Nonetheless, one step we can all take now is to <strong><em>convey biological meaning</em></strong> when we report our results.</p>
+<p>Remember that most of the analyses we do in ecology are, strictly speaking, exploratory. The only confirmatory analyses we do are those that are entirely prescribed beforehand. Your transformation of the response variable and your experimental design would have to be determined before you even do the experiment and witness the data. Any adjustment you make after that will tend to result in anti-conservative <em>p</em> values. Every decision after we have the data in hand as we try to figure out what is going in our data or in our study system will tend to increase this anti-conservative bias. The more tests we do with a particular data set – even if our tests are pre-planned – the more likely we are to mistakenly reject the null hypothesis. Do what you can to use methods that do not rely on tests that are designed to be confirmatory.</p>
+<p>An example: In the afore mentioned special issue, <a href="https://doi.org/10.1080/00031305.2018.1543135">Benjamin and Berger (2019)</a> suggest using the Bayes factor bound (BFB, Held and Ott 2018) to convey the strength of evidence in favor of an alternative (H1) over the null (H0). Under a wide range of conditions, it is the upper bound on the odds ratio in favor of H1. An alternative they suggest is the upper bound on the probability in favor of H1, Pr<sup>U</sup>(H1|data), which is just a function of BFB. <a href="https://drive.google.com/open?id=1e2hCQcwq5FpdC4-L2eJwiy49RK6rWB9h">I wrote a simple R script to calculate BFB and PR<sup>U</sup>(H1|data)</a>. Will ecologists use this or something like it? Only the Shadow knows. More importantly, our results should [<u> convey ecological meaning</u>]</p>
 </section>
-<section id="good-practice-in-general" class="level2">
-<h2 class="anchored" data-anchor-id="good-practice-in-general">Good practice, in general</h2>
-<p><a href="https://doi-org.proxy.lib.miamioh.edu/10.1111/aab.12734">Butler, Ruth. 2021. Popularity leads to bad habits: Alternatives to“the statistics” routine of significance, “alphabet soup” and dynamiteplots. <em>Annals of Applied Biology</em> 180:182–195. DOI:10.1111/aab.127341</a>.</p>
-<p>Popovic, G., Mason, T. J., Drobniak, S. M., Marques, T. A., Potts, J., Joo, R., Altwegg, R., Burns, C. C. I., McCarthy, M. A., Johnston, A., Nakagawa, S., McMillan, L., Devarajan, K., Taggart, P. L., Wunderlich, A., Mair, M. M., Martínez-Lanfranco, J. A., Lagisz, M., &amp; Pottier, P. (2024). Four principles for improved statistical ecology. <em>Methods in Ecology and Evolution</em>, 15, 266–281. <a href="https://doi-org.proxy.lib.miamioh.edu/10.1111/2041-210X.14270"><u>https://doi-org.proxy.lib.miamioh.edu/10.1111/2041-210X.14270</u></a></p>
+<section id="more-good-practice-in-general" class="level2">
+<h2 class="anchored" data-anchor-id="more-good-practice-in-general">More good practice, in general</h2>
+<p><a href="https://doi-org.proxy.lib.miamioh.edu/10.1111/aab.12734">Butler, Ruth. 2021. Popularity leads to bad habits: Alternatives to“the statistics” routine of significance, “alphabet soup” and dynamiteplots. <em>Annals of Applied Biology</em></a>.</p>
+<p><a href="https://doi-org.proxy.lib.miamioh.edu/10.1111/2041-210X.14270">Popovic, G., Mason, T. J., Drobniak, S. M., Marques, T. A., Potts, J., Joo, R., Altwegg, R., Burns, C. C. I., McCarthy, M. A., Johnston, A., Nakagawa, S., McMillan, L., Devarajan, K., Taggart, P. L., Wunderlich, A., Mair, M. M., Martínez-Lanfranco, J. A., Lagisz, M., &amp; Pottier, P. (2024). Four principles for improved statistical ecology. <em>Methods in Ecology and Evolution</em>, 15, 266–281.</a></p>
 </section>
 </section>
 <section id="reporting-methods-say-what-you-did-not-what-software-functions-you-used." class="level1">
 <h1>Reporting Methods: Say what you did, not what software functions you used.</h1>
-<p>To the extent possible, explain what you did in computational, statistical, or mathematical terms, without relying on software jargon. For instance, you should say, “I performed a one-way ANOVA” rather than “I used the aov() command in R.” I have noted that many students fall into the latter habit when describing GIS analyses, e.g., “I used the Buffer command in ESRI ArcGIS” or some such phrase. That doesn’t seem right to me, and a quick perusal of 4 articles in <em>Ecology</em> that used GIS tools included no such language. <em>The authors explained what they did in computational, statistical, or mathematical terms</em>, and merely cited software packages or computing languages that allowed them to do those calculations. Nonetheless, I cannot speak about conventions in other journals that publish studies relying on GIS. I urge you to consult recent issues of relevant journals for articles that use GIS methods to see how successful authors describe their methods. These days, you can always offer the journal an online supplemental with your code. When appropriate, consult with relevant faculty whose expertise lies in such an area; offer acknowledge or co-authorship if the situation warrants it.</p>
+<p>To the extent possible, explain what you did in computational, statistical, or mathematical terms, without relying on software jargon. For instance, you should say, “I performed a one-way ANOVA” rather than “I used the aov() command in R.” I have noticed that many students fall into the latter habit when describing GIS analyses, e.g., “I used the Buffer command in ESRI ArcGIS” or some such phrase. That doesn’t seem right to me, and a quick perusal of 4 articles in <em>Ecology</em> that used GIS tools included no such language. <em>The authors explained what they did in computational, statistical, or mathematical terms</em>, and merely cited software packages or computing languages that allowed them to do those calculations. Nonetheless, I cannot speak about conventions in other journals that publish studies relying on GIS. I urge you to consult recent issues of relevant journals for articles that use GIS methods to see how successful authors describe their methods. These days, you can always offer the journal an online supplemental with your code. When appropriate, consult with relevant faculty whose expertise lies in such an area; offer acknowledge or co-authorship if the situation warrants it.</p>
 <p>If you transform your data prior to analysis, explain why you transformed it, and indicate how much the transformation helped. And…refer to the analysis as “[analysis name] with [transformation] data”, e.g., “regression with both variables log-transformed” or “two-way analysis of variance with the response transformed using the arcsine of the square root of y.”</p>
 <section id="bayesian-analysis-reporting-guidelines" class="level2">
 <h2 class="anchored" data-anchor-id="bayesian-analysis-reporting-guidelines">Bayesian Analysis Reporting Guidelines</h2>
-<p>Good luck. For a very thorough list of considerations, see Kruschke,John K. “Bayesian Analysis Reporting Guidelines.” <em>Nature HumanBehaviour</em> 5, no. 10 (October 2021): 1282–91.<a href="https://doi.org/10.1038/s41562-021-01177-7"><u>https://doi.org/10.1038/s41562-021-01177-7</u></a>.He offers very thorough guidelines. He has a good textbook as well.(<em>Doing Bayesian Data Analysis: a tutorial using R, JAGS, and Stan. 2nd.ed. 2015. Academic Press / Elsevier.</em> ISBN: 9780124058880)</p>
+<p>Good luck. For a very thorough list of considerations, see Kruschke,John K. <a href="https://doi.org/10.1038/s41562-021-01177-7">Bayesian Analysis Reporting Guidelines.” <em>Nature HumanBehaviour</em> 5, no. 10 (October 2021): 1282–91.</a>. He offers very thorough guidelines. He has a good textbook as well.(<em>Doing Bayesian Data Analysis: a tutorial using R, JAGS, and Stan. 2nd.ed. 2015. Academic Press / Elsevier.</em> ISBN: 9780124058880)</p>
 </section>
 </section>
 <section id="citing-r-and-added-packages" class="level1">
 <h1>Citing R and added packages</h1>
 <p>If you use R, cite it.</p>
 <p>If you use R, use the correct citation.</p>
-<section id="use-citation" class="level3">
-<h3 class="anchored" data-anchor-id="use-citation">Use citation()</h3>
+<section id="when-you-use-r-use-citation" class="level2">
+<h2 class="anchored" data-anchor-id="when-you-use-r-use-citation">When you use R, use citation()</h2>
 <p>You can find the correct citation for R by typing citation() at the R prompt:</p>
 <p>&gt; citation()</p>
-<p><em>If you generate statistical results using a package other than the included <strong>stats</strong> package, you should cite it.</em> To cite an R package other than the base package or stats package, type citation(“package_name”), e.g.,</p>
+<p><em>If you generate statistical results using a package other than the included <strong>stats</strong> package, you should cite it.</em> To cite an R package other than the base package or stats package, type citation(package=“package_name”), e.g.,</p>
 <p>&gt; citation(package = “nlme”)</p>
 <p>and it will give you the source you should cite.</p>
 <p>People tend to cite R packages that help generate quantitative results and not cite packages used for display. Ask yourself, do you cite Adobe Photoshop™ if you use it to make a pretty graphic? Do you cite Microsoft Word™ when you write your manuscript? Your call.</p>
-</section>
 <section id="you-should-not-cite-rstudio-or-positron-or-jupyter-notebook" class="level3">
 <h3 class="anchored" data-anchor-id="you-should-not-cite-rstudio-or-positron-or-jupyter-notebook">You should not cite RStudio (or Positron or Jupyter Notebook)</h3>
-<p>RStudio is just a GUI, or wrapper, for R. When you download RStudio, you are not downloading R. To cite RStudio might be like citing Microsoft Word for generating ideas. Citing RStudio might be like citing the Mac OS or Windows, “All statistics were performed using Windows 8.0.3.” The operating system or GUI version you use does not usually matter, with some important exceptions that we discuss next.</p>
-<p>There are some very limited exceptions to the “Do not cite RStudio” rule. The only exception is if you are publishing in a data-specific or models-specific journal in which you must list which version of RStudio and the computer operating system on which you tested your own software. Any time you <em>test software</em> or <em>code</em>, you need to cite the underlying hardware and software you use.</p>
+<p>RStudio is just a GUI, or wrapper, for R, albiet a really useful one. When you download RStudio, you are not downloading R. To cite RStudio might be like citing Microsoft Word for generating ideas. Citing RStudio might be like citing the Mac OS or Windows, “All statistics were performed using Windows 8.0.3.” The operating system or GUI version you use does not usually matter, with some important exceptions that we discuss next.</p>
+<p>There are some very limited exceptions to the “Do not cite RStudio” rule. The only exception is if you are publishing in a data-specific or models-specific journal in which you must list which version of RStudio and the computer operating system on which you tested your own software. Any time you <em>test software</em> or <em>code</em>, you should cite the underlying hardware and software you use.</p>
 <p>Likewise, anyone maintaining a GitHub page or other repository should list that information in all the shared codes, commits, and ReadMe documents that are shared for larger scientific use. Be ready to have that information to share with audience members during oral and poster presentations.</p>
+</section>
 </section>
 </section>
 <section id="phylogenetic-analyses" class="level1">
