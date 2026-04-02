@@ -112,7 +112,26 @@ To the extent possible, explain what you did in computational, statistical, or m
 
 ## Bayesian Analysis Reporting Guidelines
 
-Good luck. For a very thorough list of considerations, see Kruschke,John K. [Bayesian Analysis Reporting Guidelines.” *Nature HumanBehaviour* 5, no. 10 (October 2021): 1282–91.](https://doi.org/10.1038/s41562-021-01177-7). He offers very thorough guidelines. He has a good textbook as well.(*Doing Bayesian Data Analysis: a tutorial using R, JAGS, and Stan. 2nd.ed. 2015. Academic Press / Elsevier.* ISBN: 9780124058880)
+### Things to include somewhere in your paper 
+Put into either the methods methods text or table, supplement, or a mix of these the following:
+
+1. The model (likelihood and priors)
+1. How you estimated the parameters of the model (i.e., ran the model)
+   a. State the method (MCMC, quadratic approximation, MLE, etc.)
+   a. Cite the core R or Python version (citation() # for R Core Team)
+   a. Cite any packages that were central to the analysis (but not the data wrangling or graphics), e.g., citation(package=“rethinking”) # for rethinking e.g.
+   a. The number of chains, iterations per chain, and the amount of warm-up.
+1. How you checked or diagnosed the estimation procedure (e.g., convergence)
+   a. For parameters: R-hat, effective sample size (bulk and tail ESS)
+   a. Overall for chains, tracerank plots or graphical test of uniformity (Sailynoja et al. 2022).
+1. How you checked assumptions of the model (e.g., homogeneity of variances, etc.)
+   a. Standard residual plots: graphical checks and statistical tests of relevant residuals or,
+   a. Scaled residual plots and tests of assumptions e.g., homogeneity of variances using scaled residuals. See the wonderful DHARMa package: Hartig F, 2024. DHARMa: Residual Diagnostics for Hierarchical (Multi-Level/Mixed) Regression Models. doi:10.32614
+
+
+### For a very thorough list of considerations
+
+See Kruschke,John K. [Bayesian Analysis Reporting Guidelines.” *Nature HumanBehaviour* 5, no. 10 (October 2021): 1282–91.](https://doi.org/10.1038/s41562-021-01177-7). He offers very thorough guidelines. He has a good textbook as well.(*Doing Bayesian Data Analysis: a tutorial using R, JAGS, and Stan. 2nd.ed. 2015. Academic Press / Elsevier.* ISBN: 9780124058880)
 
 # Citing R and added packages
 

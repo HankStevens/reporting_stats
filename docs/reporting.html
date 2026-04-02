@@ -136,7 +136,11 @@ gtag('config', 'G-W2J81KX3WZ', { 'anonymize_ip': true});
   </ul></li>
   <li><a href="#reporting-methods-say-what-you-did-not-what-software-functions-you-used." id="toc-reporting-methods-say-what-you-did-not-what-software-functions-you-used." class="nav-link" data-scroll-target="#reporting-methods-say-what-you-did-not-what-software-functions-you-used.">Reporting Methods: Say what you did, not what software functions you used.</a>
   <ul class="collapse">
-  <li><a href="#bayesian-analysis-reporting-guidelines" id="toc-bayesian-analysis-reporting-guidelines" class="nav-link" data-scroll-target="#bayesian-analysis-reporting-guidelines">Bayesian Analysis Reporting Guidelines</a></li>
+  <li><a href="#bayesian-analysis-reporting-guidelines" id="toc-bayesian-analysis-reporting-guidelines" class="nav-link" data-scroll-target="#bayesian-analysis-reporting-guidelines">Bayesian Analysis Reporting Guidelines</a>
+  <ul class="collapse">
+  <li><a href="#things-to-include-somewhere-in-your-paper" id="toc-things-to-include-somewhere-in-your-paper" class="nav-link" data-scroll-target="#things-to-include-somewhere-in-your-paper">Things to include somewhere in your paper</a></li>
+  <li><a href="#for-a-very-thorough-list-of-considerations" id="toc-for-a-very-thorough-list-of-considerations" class="nav-link" data-scroll-target="#for-a-very-thorough-list-of-considerations">For a very thorough list of considerations</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#citing-r-and-added-packages" id="toc-citing-r-and-added-packages" class="nav-link" data-scroll-target="#citing-r-and-added-packages">Citing R and added packages</a>
   <ul class="collapse">
@@ -263,7 +267,34 @@ Figure 1. For each dataset (A-C), we can reveal little information (first row) o
 <p>If you transform your data prior to analysis, explain why you transformed it, and indicate how much the transformation helped. And…refer to the analysis as “[analysis name] with [transformation] data”, e.g., “regression with both variables log-transformed” or “two-way analysis of variance with the response transformed using the arcsine of the square root of y.”</p>
 <section id="bayesian-analysis-reporting-guidelines" class="level2">
 <h2 class="anchored" data-anchor-id="bayesian-analysis-reporting-guidelines">Bayesian Analysis Reporting Guidelines</h2>
-<p>Good luck. For a very thorough list of considerations, see Kruschke,John K. <a href="https://doi.org/10.1038/s41562-021-01177-7">Bayesian Analysis Reporting Guidelines.” <em>Nature HumanBehaviour</em> 5, no. 10 (October 2021): 1282–91.</a>. He offers very thorough guidelines. He has a good textbook as well.(<em>Doing Bayesian Data Analysis: a tutorial using R, JAGS, and Stan. 2nd.ed. 2015. Academic Press / Elsevier.</em> ISBN: 9780124058880)</p>
+<section id="things-to-include-somewhere-in-your-paper" class="level3">
+<h3 class="anchored" data-anchor-id="things-to-include-somewhere-in-your-paper">Things to include somewhere in your paper</h3>
+<p>Put into either the methods methods text or table, supplement, or a mix of these the following:</p>
+<ol type="1">
+<li>The model (likelihood and priors)</li>
+<li>How you estimated the parameters of the model (i.e., ran the model)
+<ol type="a">
+<li>State the method (MCMC, quadratic approximation, MLE, etc.)</li>
+<li>Cite the core R or Python version (citation() # for R Core Team)</li>
+<li>Cite any packages that were central to the analysis (but not the data wrangling or graphics), e.g., citation(package=“rethinking”) # for rethinking e.g.</li>
+<li>The number of chains, iterations per chain, and the amount of warm-up.</li>
+</ol></li>
+<li>How you checked or diagnosed the estimation procedure (e.g., convergence)
+<ol type="a">
+<li>For parameters: R-hat, effective sample size (bulk and tail ESS)</li>
+<li>Overall for chains, tracerank plots or graphical test of uniformity (Sailynoja et al.&nbsp;2022).</li>
+</ol></li>
+<li>How you checked assumptions of the model (e.g., homogeneity of variances, etc.)
+<ol type="a">
+<li>Standard residual plots: graphical checks and statistical tests of relevant residuals or,</li>
+<li>Scaled residual plots and tests of assumptions e.g., homogeneity of variances using scaled residuals. See the wonderful DHARMa package: Hartig F, 2024. DHARMa: Residual Diagnostics for Hierarchical (Multi-Level/Mixed) Regression Models. doi:10.32614</li>
+</ol></li>
+</ol>
+</section>
+<section id="for-a-very-thorough-list-of-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="for-a-very-thorough-list-of-considerations">For a very thorough list of considerations</h3>
+<p>See Kruschke,John K. <a href="https://doi.org/10.1038/s41562-021-01177-7">Bayesian Analysis Reporting Guidelines.” <em>Nature HumanBehaviour</em> 5, no. 10 (October 2021): 1282–91.</a>. He offers very thorough guidelines. He has a good textbook as well.(<em>Doing Bayesian Data Analysis: a tutorial using R, JAGS, and Stan. 2nd.ed. 2015. Academic Press / Elsevier.</em> ISBN: 9780124058880)</p>
+</section>
 </section>
 </section>
 <section id="citing-r-and-added-packages" class="level1">
