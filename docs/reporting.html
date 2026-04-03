@@ -269,22 +269,22 @@ Figure 1. For each dataset (A-C), we can reveal little information (first row) o
 <h2 class="anchored" data-anchor-id="bayesian-analysis-reporting-guidelines">Bayesian Analysis Reporting Guidelines</h2>
 <section id="things-to-include-somewhere-in-your-paper" class="level3">
 <h3 class="anchored" data-anchor-id="things-to-include-somewhere-in-your-paper">Things to include somewhere in your paper</h3>
-<p>Put into either the methods methods text or table, supplement, or a mix of these the following:</p>
+<p>Put the following information into either the text or table of the Methods or a supplement:</p>
 <ol type="1">
 <li>The model (likelihood and priors)</li>
 <li>How you estimated the parameters of the model (i.e., ran the model)
 <ol type="a">
 <li>State the method (MCMC, quadratic approximation, MLE, etc.)</li>
-<li>Cite the core R or Python version (citation() # for R Core Team)</li>
-<li>Cite any packages that were central to the analysis (but not the data wrangling or graphics), e.g., citation(package=“rethinking”) # for rethinking e.g.</li>
-<li>The number of chains, iterations per chain, and the amount of warm-up.</li>
+<li>Cite the core R or Python version (use <code>citation()</code> # for R Core Team)</li>
+<li>Cite any packages that were central to the analysis. Find the citation using, e.g., <code>citation(package="rstan")</code>.</li>
+<li>The number of MCMC chains, iterations per chain, and the amount of warm-up for Stan or burn-in for BUGS/JAGS.</li>
 </ol></li>
-<li>How you checked or diagnosed the estimation procedure (e.g., convergence)
+<li>How you checked or diagnosed the <em>estimation procedure</em> (e.g., MCMC convergence and mixing of the chains)
 <ol type="a">
 <li>For parameters: R-hat, effective sample size (bulk and tail ESS)</li>
-<li>Overall for chains, tracerank plots or graphical test of uniformity (Sailynoja et al.&nbsp;2022).</li>
+<li>Overall for chains, trace plots, trace-rank plots, or the graphical test of uniformity (Sailynoja et al.&nbsp;2022).</li>
 </ol></li>
-<li>How you checked assumptions of the model (e.g., homogeneity of variances, etc.)
+<li>How you checked assumptions of the <em>model</em> (e.g., error distribution and homogeneity of variances, etc.)
 <ol type="a">
 <li>Standard residual plots: graphical checks and statistical tests of relevant residuals or,</li>
 <li>Scaled residual plots and tests of assumptions e.g., homogeneity of variances using scaled residuals. See the wonderful DHARMa package: Hartig F, 2024. DHARMa: Residual Diagnostics for Hierarchical (Multi-Level/Mixed) Regression Models. doi:10.32614</li>
@@ -304,15 +304,15 @@ Figure 1. For each dataset (A-C), we can reveal little information (first row) o
 <section id="when-you-use-r-use-citation" class="level2">
 <h2 class="anchored" data-anchor-id="when-you-use-r-use-citation">When you use R, use citation()</h2>
 <p>You can find the correct citation for R by typing citation() at the R prompt:</p>
-<p>&gt; citation()</p>
+<p>&gt; <code>citation()</code></p>
 <p><em>If you generate statistical results using a package other than the included <strong>stats</strong> package, you should cite it.</em> To cite an R package other than the base package or stats package, type citation(package=“package_name”), e.g.,</p>
-<p>&gt; citation(package = “nlme”)</p>
+<p>&gt; <code>citation(package = "nlme")</code></p>
 <p>and it will give you the source you should cite.</p>
 <p>People tend to cite R packages that help generate quantitative results and not cite packages used for display. Ask yourself, do you cite Adobe Photoshop™ if you use it to make a pretty graphic? Do you cite Microsoft Word™ when you write your manuscript? Your call.</p>
 <section id="you-should-not-cite-rstudio-or-positron-or-jupyter-notebook" class="level3">
 <h3 class="anchored" data-anchor-id="you-should-not-cite-rstudio-or-positron-or-jupyter-notebook">You should not cite RStudio (or Positron or Jupyter Notebook)</h3>
-<p>RStudio is just a GUI, or wrapper, for R, albiet a really useful one. When you download RStudio, you are not downloading R. To cite RStudio might be like citing Microsoft Word for generating ideas. Citing RStudio might be like citing the Mac OS or Windows, “All statistics were performed using Windows 8.0.3.” The operating system or GUI version you use does not usually matter, with some important exceptions that we discuss next.</p>
-<p>There are some very limited exceptions to the “Do not cite RStudio” rule. The only exception is if you are publishing in a data-specific or models-specific journal in which you must list which version of RStudio and the computer operating system on which you tested your own software. Any time you <em>test software</em> or <em>code</em>, you should cite the underlying hardware and software you use.</p>
+<p>RStudio is just a GUI, or wrapper, for R, albeit a really useful one. When you download RStudio, you are not downloading R. To cite RStudio might be like citing Microsoft Word for generating ideas. Citing RStudio might be like citing the Mac OS or Windows, “All statistics were performed using Windows 8.0.3.” The operating system or GUI version you use does not usually matter, with some important exceptions that we discuss next.</p>
+<p>There are some very limited exceptions to the “Do not cite RStudio” rule. The only exception is if you are publishing in a data-specific or models-specific journal in which you must list which version of RStudio and the computer operating system on which you tested your own software. Any time you <em>test software</em>, you should cite the underlying hardware and software you use.</p>
 <p>Likewise, anyone maintaining a GitHub page or other repository should list that information in all the shared codes, commits, and ReadMe documents that are shared for larger scientific use. Be ready to have that information to share with audience members during oral and poster presentations.</p>
 </section>
 </section>

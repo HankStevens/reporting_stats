@@ -113,18 +113,18 @@ To the extent possible, explain what you did in computational, statistical, or m
 ## Bayesian Analysis Reporting Guidelines
 
 ### Things to include somewhere in your paper 
-Put into either the methods methods text or table, supplement, or a mix of these the following:
+Put the following information into either the text or table of the Methods or a supplement:
 
 1. The model (likelihood and priors)
 1. How you estimated the parameters of the model (i.e., ran the model)
    a. State the method (MCMC, quadratic approximation, MLE, etc.)
-   a. Cite the core R or Python version (citation() # for R Core Team)
-   a. Cite any packages that were central to the analysis (but not the data wrangling or graphics), e.g., citation(package=“rethinking”) # for rethinking e.g.
-   a. The number of chains, iterations per chain, and the amount of warm-up.
-1. How you checked or diagnosed the estimation procedure (e.g., convergence)
+   a. Cite the core R or Python version (use `citation()` # for R Core Team)
+   a. Cite any packages that were central to the analysis. Find the citation using, e.g., `citation(package="rstan")`.
+   a. The number of MCMC chains, iterations per chain, and the amount of warm-up for Stan or burn-in for BUGS/JAGS.
+1. How you checked or diagnosed the *estimation procedure* (e.g., MCMC convergence and mixing of the chains)
    a. For parameters: R-hat, effective sample size (bulk and tail ESS)
-   a. Overall for chains, tracerank plots or graphical test of uniformity (Sailynoja et al. 2022).
-1. How you checked assumptions of the model (e.g., homogeneity of variances, etc.)
+   a. Overall for chains, trace plots, trace-rank plots, or the graphical test of uniformity (Sailynoja et al. 2022).
+1. How you checked assumptions of the *model* (e.g., error distribution and homogeneity of variances, etc.)
    a. Standard residual plots: graphical checks and statistical tests of relevant residuals or,
    a. Scaled residual plots and tests of assumptions e.g., homogeneity of variances using scaled residuals. See the wonderful DHARMa package: Hartig F, 2024. DHARMa: Residual Diagnostics for Hierarchical (Multi-Level/Mixed) Regression Models. doi:10.32614
 
@@ -143,11 +143,11 @@ See Kruschke,John K. [Bayesian Analysis Reporting Guidelines.” *Nature HumanBe
 
  You can find the correct citation for R by typing citation() at the R prompt:
 
- \> citation()
+ \> `citation()`
 
  *If you generate statistical results using a package other than the included **stats** package, you should cite it.* To cite an R package other than the base package or stats package, type citation(package=“package_name”), e.g.,
 
- \> citation(package = “nlme”)
+ \> `citation(package = "nlme")`
 
  and it will give you the source you should cite.
 
@@ -155,9 +155,9 @@ See Kruschke,John K. [Bayesian Analysis Reporting Guidelines.” *Nature HumanBe
 
 ### You should not cite RStudio (or Positron or Jupyter Notebook)
 
-RStudio is just a GUI, or wrapper, for R, albiet a really useful one. When you download RStudio, you are not downloading R. To cite RStudio might be like citing Microsoft Word for generating ideas. Citing RStudio might be like citing the Mac OS or Windows, “All statistics were performed using Windows 8.0.3.” The operating system or GUI version you use does not usually matter, with some important exceptions that we discuss next.
+RStudio is just a GUI, or wrapper, for R, albeit a really useful one. When you download RStudio, you are not downloading R. To cite RStudio might be like citing Microsoft Word for generating ideas. Citing RStudio might be like citing the Mac OS or Windows, "All statistics were performed using Windows 8.0.3." The operating system or GUI version you use does not usually matter, with some important exceptions that we discuss next.
 
- There are some very limited exceptions to the “Do not cite RStudio” rule. The only exception is if you are publishing in a data-specific or models-specific journal in which you must list which version of RStudio and the computer operating system on which you tested your own software. Any time you *test software* or *code*, you should cite the underlying hardware and software you use.
+There are some very limited exceptions to the "Do not cite RStudio" rule. The only exception is if you are publishing in a data-specific or models-specific journal in which you must list which version of RStudio and the computer operating system on which you tested your own software. Any time you *test software*, you should cite the underlying hardware and software you use.
 
 Likewise, anyone maintaining a GitHub page or other repository should list that information in all the shared codes, commits, and ReadMe documents that are shared for larger scientific use. Be ready to have that information to share with audience members during oral and poster presentations.
 
