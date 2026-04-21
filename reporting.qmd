@@ -1,6 +1,7 @@
 ---
 title: "Reporting Statistical Methods and Results"
 format: html
+number-sections: true
 ---
 
 
@@ -19,7 +20,7 @@ USA (now at NASA-Ames)*
 
 Communicate results in a way that makes sense to other people.
 
-## Convey biological meaning
+## Convey biological meaning {#sec-convey}
 
  Kathy Cottingham, Michael Crawley, and lots of others advise us to express quantitative results in a biologically meaningful way and provide both estimates and confidence intervals:
  
@@ -74,6 +75,16 @@ style="width:5.48438in;height:5.48438in" /></td>
 
 ## Beyond p-values
 
+*Before* we go beyond *p*-values, we should state that **a *p*-value^[as usually used in an ANOVA or t-test] is the probability that the data are consistent with a particular null hypothesis.** A *p*-value is not designed to tell us how big an effect is.^[There are entirely different approaches for describing the size of an effect.] 
+
+Authors sometimes use the expression "marginal effect" to refer to an effect with a *p*-value slightly above your favorite criterion, such as $p<0.05$. This confounds the expected size of the effect, with the confidence interval of the effect, and the *p*-value from a test. A better use of the term "marginal effect" might be, 
+
+- a very small effect of dubious ecological importance,
+- the change in a response due to a one unit change in a predictor (e.g., the slope of a regression line). 
+- an effect which *marginalizes* or averages over other effects.
+
+**Given the limitation of *p*-values, we are better prepared to go beyond them.**
+
  In 2019, The American Statistical Association devoted an issue of their journal, *The American Statistician*, on [<u>“Moving to a World> Beyond ‘p \<> 0.05’”</u>](https://doi.org/10.1080/00031305.2019.1583913). They state,
 
 *In sum, “statistically significant”— don’t say it and don’t use it.* 
@@ -85,11 +96,13 @@ The authors ask us to “ATOM”:
 3.  Be **<u>O</u>**pen and transparent
 4.  Be **<u>M</u>**odest
 
-We strongly encourage you to use the link above to access the opening editorial for that issue of the journal. All that their advice entails, and what practical steps we take if we no longer can say “statistically significant”, is waaaay beyond the scope of this short document. Nonetheless, one step we can all take now is to ***convey biological meaning*** when we report our results.
+We strongly encourage you to use the link above to access the opening editorial for that issue of the journal. All that their advice entails, and what practical steps we take if we no longer can say “statistically significant”, is waaaay beyond the scope of this short document. 
+
+Nonetheless, one step we can all take now is to ***convey biological meaning*** when we report our results. See @sec-convey.
 
  Remember that most of the analyses we do in ecology are, strictly speaking, exploratory. The only confirmatory analyses we do are those that are entirely prescribed beforehand. Your transformation of the response variable and your experimental design would have to be determined before you even do the experiment and witness the data. Any adjustment you make after that will tend to result in anti-conservative *p* values. Every decision after we have the data in hand as we try to figure out what is going in our data or in our study system will tend to increase this anti-conservative bias. The more tests we do with a particular data set -- even if our tests are pre-planned -- the more likely we are to mistakenly reject the null hypothesis. Do what you can to use methods that do not rely on tests that are designed to be confirmatory.
 
- An example: In the afore mentioned special issue, [Benjamin and Berger (2019)](https://doi.org/10.1080/00031305.2018.1543135) suggest using the Bayes factor bound (BFB, Held and Ott 2018) to convey the strength of evidence in favor of an alternative (H1) over the null (H0). Under a wide range of conditions, it is the upper bound on the odds ratio in favor of H1. An alternative they suggest is the upper bound on the probability in favor of H1, Pr<sup>U</sup>(H1\|data), which is just a function of BFB. [I wrote a simple R script to calculate BFB and PR<sup>U</sup>(H1\|data)](https://drive.google.com/open?id=1e2hCQcwq5FpdC4-L2eJwiy49RK6rWB9h). Will ecologists use this or something like it? Only the Shadow knows. More importantly, our results should [<u> convey ecological meaning</u>]
+ An example: In the aforementioned special issue, [Benjamin and Berger (2019)](https://doi.org/10.1080/00031305.2018.1543135) suggest using the Bayes factor bound (BFB, Held and Ott 2018) to convey the strength of evidence in favor of an alternative (H1) over the null (H0). Under a wide range of conditions, it is the upper bound on the odds ratio in favor of H1. An alternative they suggest is the upper bound on the probability in favor of H1, Pr<sup>U</sup>(H1\|data), which is just a function of BFB. [I wrote a simple R script to calculate BFB and PR<sup>U</sup>(H1\|data)](https://drive.google.com/open?id=1e2hCQcwq5FpdC4-L2eJwiy49RK6rWB9h). Will ecologists use this or something like it? Only the Shadow knows. More importantly, our results should [<u> convey ecological meaning</u>]
 
 
 ## More good practice, in general
@@ -126,7 +139,7 @@ Put the following information into either the text or table of the Methods or a 
    a. Overall for chains, trace plots, trace-rank plots, or the graphical test of uniformity (Sailynoja et al. 2022).
 1. How you checked assumptions of the *model* (e.g., error distribution and homogeneity of variances, etc.)
    a. Standard residual plots: graphical checks and statistical tests of relevant residuals or,
-   a. Scaled residual plots and tests of assumptions e.g., homogeneity of variances using scaled residuals. See the wonderful DHARMa package: Hartig F, 2024. DHARMa: Residual Diagnostics for Hierarchical (Multi-Level/Mixed) Regression Models. doi:10.32614
+   a. Scaled residual plots and tests of assumptions e.g., homogeneity of variances using scaled residuals. See the wonderful DHARMa package: Hartig, F., 2024. DHARMa: Residual Diagnostics for Hierarchical (Multi-Level/Mixed) Regression Models. doi:10.32614
 
 
 ### For a very thorough list of considerations

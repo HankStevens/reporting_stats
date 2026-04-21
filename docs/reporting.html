@@ -78,6 +78,35 @@ gtag('js', new Date());
 gtag('config', 'G-W2J81KX3WZ', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -127,34 +156,34 @@ gtag('config', 'G-W2J81KX3WZ', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reporting-results" id="toc-reporting-results" class="nav-link active" data-scroll-target="#reporting-results">Reporting results</a>
+  <li><a href="#reporting-results" id="toc-reporting-results" class="nav-link active" data-scroll-target="#reporting-results"><span class="header-section-number">1</span> Reporting results</a>
   <ul class="collapse">
-  <li><a href="#convey-biological-meaning" id="toc-convey-biological-meaning" class="nav-link" data-scroll-target="#convey-biological-meaning">Convey biological meaning</a></li>
-  <li><a href="#tradeoffs-in-graphical-displays" id="toc-tradeoffs-in-graphical-displays" class="nav-link" data-scroll-target="#tradeoffs-in-graphical-displays">Tradeoffs in graphical displays</a></li>
-  <li><a href="#beyond-p-values" id="toc-beyond-p-values" class="nav-link" data-scroll-target="#beyond-p-values">Beyond p-values</a></li>
-  <li><a href="#more-good-practice-in-general" id="toc-more-good-practice-in-general" class="nav-link" data-scroll-target="#more-good-practice-in-general">More good practice, in general</a></li>
+  <li><a href="#sec-convey" id="toc-sec-convey" class="nav-link" data-scroll-target="#sec-convey"><span class="header-section-number">1.1</span> Convey biological meaning</a></li>
+  <li><a href="#tradeoffs-in-graphical-displays" id="toc-tradeoffs-in-graphical-displays" class="nav-link" data-scroll-target="#tradeoffs-in-graphical-displays"><span class="header-section-number">1.2</span> Tradeoffs in graphical displays</a></li>
+  <li><a href="#beyond-p-values" id="toc-beyond-p-values" class="nav-link" data-scroll-target="#beyond-p-values"><span class="header-section-number">1.3</span> Beyond p-values</a></li>
+  <li><a href="#more-good-practice-in-general" id="toc-more-good-practice-in-general" class="nav-link" data-scroll-target="#more-good-practice-in-general"><span class="header-section-number">1.4</span> More good practice, in general</a></li>
   </ul></li>
-  <li><a href="#reporting-methods-say-what-you-did-not-what-software-functions-you-used." id="toc-reporting-methods-say-what-you-did-not-what-software-functions-you-used." class="nav-link" data-scroll-target="#reporting-methods-say-what-you-did-not-what-software-functions-you-used.">Reporting Methods: Say what you did, not what software functions you used.</a>
+  <li><a href="#reporting-methods-say-what-you-did-not-what-software-functions-you-used." id="toc-reporting-methods-say-what-you-did-not-what-software-functions-you-used." class="nav-link" data-scroll-target="#reporting-methods-say-what-you-did-not-what-software-functions-you-used."><span class="header-section-number">2</span> Reporting Methods: Say what you did, not what software functions you used.</a>
   <ul class="collapse">
-  <li><a href="#bayesian-analysis-reporting-guidelines" id="toc-bayesian-analysis-reporting-guidelines" class="nav-link" data-scroll-target="#bayesian-analysis-reporting-guidelines">Bayesian Analysis Reporting Guidelines</a>
+  <li><a href="#bayesian-analysis-reporting-guidelines" id="toc-bayesian-analysis-reporting-guidelines" class="nav-link" data-scroll-target="#bayesian-analysis-reporting-guidelines"><span class="header-section-number">2.1</span> Bayesian Analysis Reporting Guidelines</a>
   <ul class="collapse">
-  <li><a href="#things-to-include-somewhere-in-your-paper" id="toc-things-to-include-somewhere-in-your-paper" class="nav-link" data-scroll-target="#things-to-include-somewhere-in-your-paper">Things to include somewhere in your paper</a></li>
-  <li><a href="#for-a-very-thorough-list-of-considerations" id="toc-for-a-very-thorough-list-of-considerations" class="nav-link" data-scroll-target="#for-a-very-thorough-list-of-considerations">For a very thorough list of considerations</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#citing-r-and-added-packages" id="toc-citing-r-and-added-packages" class="nav-link" data-scroll-target="#citing-r-and-added-packages">Citing R and added packages</a>
-  <ul class="collapse">
-  <li><a href="#when-you-use-r-use-citation" id="toc-when-you-use-r-use-citation" class="nav-link" data-scroll-target="#when-you-use-r-use-citation">When you use R, use citation()</a>
-  <ul class="collapse">
-  <li><a href="#you-should-not-cite-rstudio-or-positron-or-jupyter-notebook" id="toc-you-should-not-cite-rstudio-or-positron-or-jupyter-notebook" class="nav-link" data-scroll-target="#you-should-not-cite-rstudio-or-positron-or-jupyter-notebook">You should not cite RStudio (or Positron or Jupyter Notebook)</a></li>
+  <li><a href="#things-to-include-somewhere-in-your-paper" id="toc-things-to-include-somewhere-in-your-paper" class="nav-link" data-scroll-target="#things-to-include-somewhere-in-your-paper"><span class="header-section-number">2.1.1</span> Things to include somewhere in your paper</a></li>
+  <li><a href="#for-a-very-thorough-list-of-considerations" id="toc-for-a-very-thorough-list-of-considerations" class="nav-link" data-scroll-target="#for-a-very-thorough-list-of-considerations"><span class="header-section-number">2.1.2</span> For a very thorough list of considerations</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#phylogenetic-analyses" id="toc-phylogenetic-analyses" class="nav-link" data-scroll-target="#phylogenetic-analyses">Phylogenetic analyses</a>
+  <li><a href="#citing-r-and-added-packages" id="toc-citing-r-and-added-packages" class="nav-link" data-scroll-target="#citing-r-and-added-packages"><span class="header-section-number">3</span> Citing R and added packages</a>
   <ul class="collapse">
-  <li><a href="#building-trees" id="toc-building-trees" class="nav-link" data-scroll-target="#building-trees">Building trees</a></li>
-  <li><a href="#preparing-figures" id="toc-preparing-figures" class="nav-link" data-scroll-target="#preparing-figures">Preparing figures</a></li>
+  <li><a href="#when-you-use-r-use-citation" id="toc-when-you-use-r-use-citation" class="nav-link" data-scroll-target="#when-you-use-r-use-citation"><span class="header-section-number">3.1</span> When you use R, use citation()</a>
+  <ul class="collapse">
+  <li><a href="#you-should-not-cite-rstudio-or-positron-or-jupyter-notebook" id="toc-you-should-not-cite-rstudio-or-positron-or-jupyter-notebook" class="nav-link" data-scroll-target="#you-should-not-cite-rstudio-or-positron-or-jupyter-notebook"><span class="header-section-number">3.1.1</span> You should not cite RStudio (or Positron or Jupyter Notebook)</a></li>
   </ul></li>
-  <li><a href="#points-of-significance---an-authoritative-source-for-biologists" id="toc-points-of-significance---an-authoritative-source-for-biologists" class="nav-link" data-scroll-target="#points-of-significance---an-authoritative-source-for-biologists"><em>Points of Significance</em> - An authoritative source for biologists</a></li>
+  </ul></li>
+  <li><a href="#phylogenetic-analyses" id="toc-phylogenetic-analyses" class="nav-link" data-scroll-target="#phylogenetic-analyses"><span class="header-section-number">4</span> Phylogenetic analyses</a>
+  <ul class="collapse">
+  <li><a href="#building-trees" id="toc-building-trees" class="nav-link" data-scroll-target="#building-trees"><span class="header-section-number">4.1</span> Building trees</a></li>
+  <li><a href="#preparing-figures" id="toc-preparing-figures" class="nav-link" data-scroll-target="#preparing-figures"><span class="header-section-number">4.2</span> Preparing figures</a></li>
+  </ul></li>
+  <li><a href="#points-of-significance---an-authoritative-source-for-biologists" id="toc-points-of-significance---an-authoritative-source-for-biologists" class="nav-link" data-scroll-target="#points-of-significance---an-authoritative-source-for-biologists"><span class="header-section-number">5</span> <em>Points of Significance</em> - An authoritative source for biologists</a></li>
   </ul>
 </nav>
     </div>
@@ -184,11 +213,11 @@ gtag('config', 'G-W2J81KX3WZ', { 'anonymize_ip': true});
 <p><em><sup>1</sup> Ph.D.&nbsp;Program in Ecology, Evolution, and Environmental Biology, Miami University, Oxford, OH, USA</em></p>
 <p><em><sup>2</sup> Department of Biology, Miami University, Oxford, OH, USA</em></p>
 <p><em><sup>3</sup> Department of Geography, Miami University, Oxford, OH, USA (now at NASA-Ames)</em></p>
-<section id="reporting-results" class="level1">
-<h1>Reporting results</h1>
+<section id="reporting-results" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Reporting results</h1>
 <p>Communicate results in a way that makes sense to other people.</p>
-<section id="convey-biological-meaning" class="level2">
-<h2 class="anchored" data-anchor-id="convey-biological-meaning">Convey biological meaning</h2>
+<section id="sec-convey" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-convey"><span class="header-section-number">1.1</span> Convey biological meaning</h2>
 <p>Kathy Cottingham, Michael Crawley, and lots of others advise us to express quantitative results in a biologically meaningful way and provide both estimates and confidence intervals:</p>
 <ul>
 <li><p>“Leaf area increased by an average of 20% (95% CI, 15.7-28.4%).”</p></li>
@@ -196,8 +225,8 @@ gtag('config', 'G-W2J81KX3WZ', { 'anonymize_ip': true});
 </ul>
 <p>You can do better than to state merely that “leaf area increased significantly” or worse, that the “relationship between stem density and CEC was significant”. Don’t waste the space – just tell us what the relationship was. Convey meaning.</p>
 </section>
-<section id="tradeoffs-in-graphical-displays" class="level2">
-<h2 class="anchored" data-anchor-id="tradeoffs-in-graphical-displays">Tradeoffs in graphical displays</h2>
+<section id="tradeoffs-in-graphical-displays" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="tradeoffs-in-graphical-displays"><span class="header-section-number">1.2</span> Tradeoffs in graphical displays</h2>
 <p>What is the goal of a graph? Is it to reveal an analysis or a result? Assess assumptions or provide predictions? Regardless, the graphical display of a result represents a tradeoff between showing us the supported finding versus showing us enough data to help us understand the basis of the result and the biological implications. Authors need to make conscious decisions about their intent. Below are a few examples of choices and potential problems.</p>
 <p><em>Should you show us your data?</em> The subfigures A, D, G are all based on the same seven x,y pairs, but we add progressively more information from A to D to G. The same is true for the center column using 1000 x,y pairs with normally distributed <em>y</em> (B, E, H), and for the right column using 1000 x,y pairs but with lognormally distributed <em>y</em> (C, F, G).</p>
 <table>
@@ -240,8 +269,16 @@ Figure 1. For each dataset (A-C), we can reveal little information (first row) o
 <p><em>Dynamite plots are plots that can blow up in your face.</em> See, for instance,</p>
 <p><a href="https://simplystatistics.org/posts/2019-02-21-dynamite-plots-must-die/"><u>https://simplystatistics.org/posts/2019-02-21-dynamite-plots-must-die/</u></a></p>
 </section>
-<section id="beyond-p-values" class="level2">
-<h2 class="anchored" data-anchor-id="beyond-p-values">Beyond p-values</h2>
+<section id="beyond-p-values" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="beyond-p-values"><span class="header-section-number">1.3</span> Beyond p-values</h2>
+<p><em>Before</em> we go beyond <em>p</em>-values, we should state that <strong>a <em>p</em>-value<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> is the probability that the data are consistent with a particular null hypothesis.</strong> A <em>p</em>-value is not designed to tell us how big an effect is.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>Authors sometimes use the expression “marginal effect” to refer to an effect with a <em>p</em>-value slightly above your favorite criterion, such as <span class="math inline">\(p&lt;0.05\)</span>. This confounds the expected size of the effect, with the confidence interval of the effect, and the <em>p</em>-value from a test. A better use of the term “marginal effect” might be,</p>
+<ul>
+<li>a very small effect of dubious ecological importance,</li>
+<li>the change in a response due to a one unit change in a predictor (e.g., the slope of a regression line).</li>
+<li>an effect which <em>marginalizes</em> or averages over other effects.</li>
+</ul>
+<p><strong>Given the limitation of <em>p</em>-values, we are better prepared to go beyond them.</strong></p>
 <p>In 2019, The American Statistical Association devoted an issue of their journal, <em>The American Statistician</em>, on <a href="https://doi.org/10.1080/00031305.2019.1583913"><u>“Moving to a World&gt; Beyond ‘p &lt;&gt; 0.05’”</u></a>. They state,</p>
 <p><em>In sum, “statistically significant”— don’t say it and don’t use it.</em></p>
 <p>The authors ask us to “ATOM”:</p>
@@ -251,24 +288,25 @@ Figure 1. For each dataset (A-C), we can reveal little information (first row) o
 <li>Be <strong><u>O</u></strong>pen and transparent</li>
 <li>Be <strong><u>M</u></strong>odest</li>
 </ol>
-<p>We strongly encourage you to use the link above to access the opening editorial for that issue of the journal. All that their advice entails, and what practical steps we take if we no longer can say “statistically significant”, is waaaay beyond the scope of this short document. Nonetheless, one step we can all take now is to <strong><em>convey biological meaning</em></strong> when we report our results.</p>
+<p>We strongly encourage you to use the link above to access the opening editorial for that issue of the journal. All that their advice entails, and what practical steps we take if we no longer can say “statistically significant”, is waaaay beyond the scope of this short document.</p>
+<p>Nonetheless, one step we can all take now is to <strong><em>convey biological meaning</em></strong> when we report our results. See <a href="#sec-convey" class="quarto-xref">Section&nbsp;1.1</a>.</p>
 <p>Remember that most of the analyses we do in ecology are, strictly speaking, exploratory. The only confirmatory analyses we do are those that are entirely prescribed beforehand. Your transformation of the response variable and your experimental design would have to be determined before you even do the experiment and witness the data. Any adjustment you make after that will tend to result in anti-conservative <em>p</em> values. Every decision after we have the data in hand as we try to figure out what is going in our data or in our study system will tend to increase this anti-conservative bias. The more tests we do with a particular data set – even if our tests are pre-planned – the more likely we are to mistakenly reject the null hypothesis. Do what you can to use methods that do not rely on tests that are designed to be confirmatory.</p>
-<p>An example: In the afore mentioned special issue, <a href="https://doi.org/10.1080/00031305.2018.1543135">Benjamin and Berger (2019)</a> suggest using the Bayes factor bound (BFB, Held and Ott 2018) to convey the strength of evidence in favor of an alternative (H1) over the null (H0). Under a wide range of conditions, it is the upper bound on the odds ratio in favor of H1. An alternative they suggest is the upper bound on the probability in favor of H1, Pr<sup>U</sup>(H1|data), which is just a function of BFB. <a href="https://drive.google.com/open?id=1e2hCQcwq5FpdC4-L2eJwiy49RK6rWB9h">I wrote a simple R script to calculate BFB and PR<sup>U</sup>(H1|data)</a>. Will ecologists use this or something like it? Only the Shadow knows. More importantly, our results should [<u> convey ecological meaning</u>]</p>
+<p>An example: In the aforementioned special issue, <a href="https://doi.org/10.1080/00031305.2018.1543135">Benjamin and Berger (2019)</a> suggest using the Bayes factor bound (BFB, Held and Ott 2018) to convey the strength of evidence in favor of an alternative (H1) over the null (H0). Under a wide range of conditions, it is the upper bound on the odds ratio in favor of H1. An alternative they suggest is the upper bound on the probability in favor of H1, Pr<sup>U</sup>(H1|data), which is just a function of BFB. <a href="https://drive.google.com/open?id=1e2hCQcwq5FpdC4-L2eJwiy49RK6rWB9h">I wrote a simple R script to calculate BFB and PR<sup>U</sup>(H1|data)</a>. Will ecologists use this or something like it? Only the Shadow knows. More importantly, our results should [<u> convey ecological meaning</u>]</p>
 </section>
-<section id="more-good-practice-in-general" class="level2">
-<h2 class="anchored" data-anchor-id="more-good-practice-in-general">More good practice, in general</h2>
+<section id="more-good-practice-in-general" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="more-good-practice-in-general"><span class="header-section-number">1.4</span> More good practice, in general</h2>
 <p><a href="https://doi-org.proxy.lib.miamioh.edu/10.1111/aab.12734">Butler, Ruth. 2021. Popularity leads to bad habits: Alternatives to“the statistics” routine of significance, “alphabet soup” and dynamiteplots. <em>Annals of Applied Biology</em></a>.</p>
 <p><a href="https://doi-org.proxy.lib.miamioh.edu/10.1111/2041-210X.14270">Popovic, G., Mason, T. J., Drobniak, S. M., Marques, T. A., Potts, J., Joo, R., Altwegg, R., Burns, C. C. I., McCarthy, M. A., Johnston, A., Nakagawa, S., McMillan, L., Devarajan, K., Taggart, P. L., Wunderlich, A., Mair, M. M., Martínez-Lanfranco, J. A., Lagisz, M., &amp; Pottier, P. (2024). Four principles for improved statistical ecology. <em>Methods in Ecology and Evolution</em>, 15, 266–281.</a></p>
 </section>
 </section>
-<section id="reporting-methods-say-what-you-did-not-what-software-functions-you-used." class="level1">
-<h1>Reporting Methods: Say what you did, not what software functions you used.</h1>
+<section id="reporting-methods-say-what-you-did-not-what-software-functions-you-used." class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Reporting Methods: Say what you did, not what software functions you used.</h1>
 <p>To the extent possible, explain what you did in computational, statistical, or mathematical terms, without relying on software jargon. For instance, you should say, “I performed a one-way ANOVA” rather than “I used the aov() command in R.” I have noticed that many students fall into the latter habit when describing GIS analyses, e.g., “I used the Buffer command in ESRI ArcGIS” or some such phrase. That doesn’t seem right to me, and a quick perusal of 4 articles in <em>Ecology</em> that used GIS tools included no such language. <em>The authors explained what they did in computational, statistical, or mathematical terms</em>, and merely cited software packages or computing languages that allowed them to do those calculations. Nonetheless, I cannot speak about conventions in other journals that publish studies relying on GIS. I urge you to consult recent issues of relevant journals for articles that use GIS methods to see how successful authors describe their methods. These days, you can always offer the journal an online supplemental with your code. When appropriate, consult with relevant faculty whose expertise lies in such an area; offer acknowledge or co-authorship if the situation warrants it.</p>
 <p>If you transform your data prior to analysis, explain why you transformed it, and indicate how much the transformation helped. And…refer to the analysis as “[analysis name] with [transformation] data”, e.g., “regression with both variables log-transformed” or “two-way analysis of variance with the response transformed using the arcsine of the square root of y.”</p>
-<section id="bayesian-analysis-reporting-guidelines" class="level2">
-<h2 class="anchored" data-anchor-id="bayesian-analysis-reporting-guidelines">Bayesian Analysis Reporting Guidelines</h2>
-<section id="things-to-include-somewhere-in-your-paper" class="level3">
-<h3 class="anchored" data-anchor-id="things-to-include-somewhere-in-your-paper">Things to include somewhere in your paper</h3>
+<section id="bayesian-analysis-reporting-guidelines" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="bayesian-analysis-reporting-guidelines"><span class="header-section-number">2.1</span> Bayesian Analysis Reporting Guidelines</h2>
+<section id="things-to-include-somewhere-in-your-paper" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="things-to-include-somewhere-in-your-paper"><span class="header-section-number">2.1.1</span> Things to include somewhere in your paper</h3>
 <p>Put the following information into either the text or table of the Methods or a supplement:</p>
 <ol type="1">
 <li>The model (likelihood and priors)</li>
@@ -287,41 +325,41 @@ Figure 1. For each dataset (A-C), we can reveal little information (first row) o
 <li>How you checked assumptions of the <em>model</em> (e.g., error distribution and homogeneity of variances, etc.)
 <ol type="a">
 <li>Standard residual plots: graphical checks and statistical tests of relevant residuals or,</li>
-<li>Scaled residual plots and tests of assumptions e.g., homogeneity of variances using scaled residuals. See the wonderful DHARMa package: Hartig F, 2024. DHARMa: Residual Diagnostics for Hierarchical (Multi-Level/Mixed) Regression Models. doi:10.32614</li>
+<li>Scaled residual plots and tests of assumptions e.g., homogeneity of variances using scaled residuals. See the wonderful DHARMa package: Hartig, F., 2024. DHARMa: Residual Diagnostics for Hierarchical (Multi-Level/Mixed) Regression Models. doi:10.32614</li>
 </ol></li>
 </ol>
 </section>
-<section id="for-a-very-thorough-list-of-considerations" class="level3">
-<h3 class="anchored" data-anchor-id="for-a-very-thorough-list-of-considerations">For a very thorough list of considerations</h3>
+<section id="for-a-very-thorough-list-of-considerations" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="for-a-very-thorough-list-of-considerations"><span class="header-section-number">2.1.2</span> For a very thorough list of considerations</h3>
 <p>See Kruschke,John K. <a href="https://doi.org/10.1038/s41562-021-01177-7">Bayesian Analysis Reporting Guidelines.” <em>Nature HumanBehaviour</em> 5, no. 10 (October 2021): 1282–91.</a>. He offers very thorough guidelines. He has a good textbook as well.(<em>Doing Bayesian Data Analysis: a tutorial using R, JAGS, and Stan. 2nd.ed. 2015. Academic Press / Elsevier.</em> ISBN: 9780124058880)</p>
 </section>
 </section>
 </section>
-<section id="citing-r-and-added-packages" class="level1">
-<h1>Citing R and added packages</h1>
+<section id="citing-r-and-added-packages" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Citing R and added packages</h1>
 <p>If you use R, cite it.</p>
 <p>If you use R, use the correct citation.</p>
-<section id="when-you-use-r-use-citation" class="level2">
-<h2 class="anchored" data-anchor-id="when-you-use-r-use-citation">When you use R, use citation()</h2>
+<section id="when-you-use-r-use-citation" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="when-you-use-r-use-citation"><span class="header-section-number">3.1</span> When you use R, use citation()</h2>
 <p>You can find the correct citation for R by typing citation() at the R prompt:</p>
 <p>&gt; <code>citation()</code></p>
 <p><em>If you generate statistical results using a package other than the included <strong>stats</strong> package, you should cite it.</em> To cite an R package other than the base package or stats package, type citation(package=“package_name”), e.g.,</p>
 <p>&gt; <code>citation(package = "nlme")</code></p>
 <p>and it will give you the source you should cite.</p>
 <p>People tend to cite R packages that help generate quantitative results and not cite packages used for display. Ask yourself, do you cite Adobe Photoshop™ if you use it to make a pretty graphic? Do you cite Microsoft Word™ when you write your manuscript? Your call.</p>
-<section id="you-should-not-cite-rstudio-or-positron-or-jupyter-notebook" class="level3">
-<h3 class="anchored" data-anchor-id="you-should-not-cite-rstudio-or-positron-or-jupyter-notebook">You should not cite RStudio (or Positron or Jupyter Notebook)</h3>
+<section id="you-should-not-cite-rstudio-or-positron-or-jupyter-notebook" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="you-should-not-cite-rstudio-or-positron-or-jupyter-notebook"><span class="header-section-number">3.1.1</span> You should not cite RStudio (or Positron or Jupyter Notebook)</h3>
 <p>RStudio is just a GUI, or wrapper, for R, albeit a really useful one. When you download RStudio, you are not downloading R. To cite RStudio might be like citing Microsoft Word for generating ideas. Citing RStudio might be like citing the Mac OS or Windows, “All statistics were performed using Windows 8.0.3.” The operating system or GUI version you use does not usually matter, with some important exceptions that we discuss next.</p>
 <p>There are some very limited exceptions to the “Do not cite RStudio” rule. The only exception is if you are publishing in a data-specific or models-specific journal in which you must list which version of RStudio and the computer operating system on which you tested your own software. Any time you <em>test software</em>, you should cite the underlying hardware and software you use.</p>
 <p>Likewise, anyone maintaining a GitHub page or other repository should list that information in all the shared codes, commits, and ReadMe documents that are shared for larger scientific use. Be ready to have that information to share with audience members during oral and poster presentations.</p>
 </section>
 </section>
 </section>
-<section id="phylogenetic-analyses" class="level1">
-<h1>Phylogenetic analyses</h1>
+<section id="phylogenetic-analyses" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Phylogenetic analyses</h1>
 <p><em>Contributed by Tereza Jezkova</em></p>
-<section id="building-trees" class="level2">
-<h2 class="anchored" data-anchor-id="building-trees">Building trees</h2>
+<section id="building-trees" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="building-trees"><span class="header-section-number">4.1</span> Building trees</h2>
 <p>When constructing a phylogenetic tree, you should report the following:</p>
 <ol type="1">
 <li><p>What genes and how many base pairs were used to reconstruct a tree</p></li>
@@ -331,8 +369,8 @@ Figure 1. For each dataset (A-C), we can reveal little information (first row) o
 <li><p>How was the node support assessed (e.g., using bootstrapping, posterior probabilities)</p></li>
 </ol>
 </section>
-<section id="preparing-figures" class="level2">
-<h2 class="anchored" data-anchor-id="preparing-figures">Preparing figures</h2>
+<section id="preparing-figures" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="preparing-figures"><span class="header-section-number">4.2</span> Preparing figures</h2>
 <p>When preparing a tree figure for a manuscript, remember to:</p>
 <ol type="1">
 <li><p>Indicate the support of nodes. If possible, write all support values directly on the tree. Alternatively, you can indicate all highly supported nodes (based on your criterion) by e.g., placing dark dots on them.</p></li>
@@ -340,8 +378,8 @@ Figure 1. For each dataset (A-C), we can reveal little information (first row) o
 </ol>
 </section>
 </section>
-<section id="points-of-significance---an-authoritative-source-for-biologists" class="level1">
-<h1><em>Points of Significance</em> - An authoritative source for biologists</h1>
+<section id="points-of-significance---an-authoritative-source-for-biologists" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> <em>Points of Significance</em> - An authoritative source for biologists</h1>
 <p>A credible source for many of these ideas and more:</p>
 <p><a href="https://www.nature.com/collections/qghhqm/pointsofsignificance"><u>Point of&gt; Significance</u></a> is a nice collection of authoritative articles for biologists that provide introductions to a wide variety of statistical topics such as,</p>
 <ul>
@@ -357,7 +395,14 @@ Figure 1. For each dataset (A-C), we can reveal little information (first row) o
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>as usually used in an ANOVA or t-test<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>There are entirely different approaches for describing the size of an effect.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
