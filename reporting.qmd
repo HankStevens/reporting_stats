@@ -35,7 +35,8 @@ You can do better than to state merely that “leaf area increased significantly
 
  What is the goal of a graph? Is it to reveal an analysis or a result? Assess assumptions or provide predictions? Regardless, the graphical display of a result represents a tradeoff between showing us the supported finding versus showing us enough data to help us understand the basis of the result and the biological implications. Authors need to make conscious decisions about their intent. Below are a few examples of choices and potential problems.
 
-*Should you show us your data?* The subfigures A, D, G are all based on the same seven x,y pairs, but we add progressively more information from A to D to G. The same is true for the center column using 1000 x,y pairs with normally distributed *y* (B, E, H), and for the right column using 1000 x,y pairs but with lognormally distributed *y* (C, F, G).
+### Should you show us your data?
+The subfigures A, D, G are all based on the same seven x,y pairs, but we add progressively more information from A to D to G. The same is true for the center column using 1000 x,y pairs with normally distributed *y* (B, E, H), and for the right column using 1000 x,y pairs but with lognormally distributed *y* (C, F, G).
 
 <table>
 <colgroup>
@@ -62,15 +63,18 @@ style="width:5.48438in;height:5.48438in" /></td>
 </tbody>
 </table>
 
- *Which experimental factors should you plot?* Another important issue to consider is whether to plot all treatment combinations, or just those that are supported by statistical tests. For instance, if you predict, *a priori*, that factors A and B interact multiplicatively, but your model (ANOVA) suggests that only A affects the response, should you graph your data in a way that shows both A and B, or show only the effect of A? Inquiring minds want to know and often disagree.
+### Which experimental factors should you plot?
+ Another important issue to consider is whether to plot all treatment combinations, or just those that are supported by statistical tests. For instance, if you predict, *a priori*, that factors A and B interact multiplicatively, but your model (ANOVA) suggests that only A affects the response, should you graph your data in a way that shows both A and B, or show only the effect of A? Inquiring minds want to know and often disagree.
 
 <img src="interaction_plots.png" style="width:4.78646in;height:3.58984in" /img>
 
  Figure 2. Our experiment tested the overall and interactive effects of factors A and B on a response. ANOVA showed support for an effect of A, but *not* for effects of B nor an interaction. Should you plot everything you investigated and let us see the various outcomes (A, C), or plot only the effect that has statistical support (B,D)?
 
- *Dynamite plots are plots that can blow up in your face.* See, for instance,
+### Dynamite plots are plots that can blow up in your face. 
 
-[<u>https://simplystatistics.org/posts/2019-02-21-dynamite-plots-must-die/</u>](https://simplystatistics.org/posts/2019-02-21-dynamite-plots-must-die/)
+See, for instance,
+
+[<u>https://simplystatistics.org/posts/2019-02-21-dynamite-plots-must-die/</u>](https://simplystatistics.org/posts/2019-02-21-dynamite-plots-must-die/){target="_blank"}
 
 
 ## Beyond p-values
@@ -81,11 +85,11 @@ Authors sometimes use the expression "marginal effect" to refer to an effect wit
 
 - a very small effect of dubious ecological importance,
 - the change in a response due to a one unit change in a predictor (e.g., the slope of a regression line). 
-- an effect which *marginalizes* or averages over other effects.
+- an effect which *marginalizes* (i.e., averages over) other effects.
 
 **Given the limitation of *p*-values, we are better prepared to go beyond them.**
 
- In 2019, The American Statistical Association devoted an issue of their journal, *The American Statistician*, on [<u>“Moving to a World> Beyond ‘p \<> 0.05’”</u>](https://doi.org/10.1080/00031305.2019.1583913). They state,
+ In 2019, The American Statistical Association devoted an issue of their journal, *The American Statistician*, on [<u>“Moving to a World> Beyond ‘p \<> 0.05’”</u>](https://doi.org/10.1080/00031305.2019.1583913){target="_blank"}. They state,
 
 *In sum, “statistically significant”— don’t say it and don’t use it.* 
 
@@ -102,19 +106,19 @@ Nonetheless, one step we can all take now is to ***convey biological meaning*** 
 
  Remember that most of the analyses we do in ecology are, strictly speaking, exploratory. The only confirmatory analyses we do are those that are entirely prescribed beforehand. Your transformation of the response variable and your experimental design would have to be determined before you even do the experiment and witness the data. Any adjustment you make after that will tend to result in anti-conservative *p* values. Every decision after we have the data in hand as we try to figure out what is going in our data or in our study system will tend to increase this anti-conservative bias. The more tests we do with a particular data set -- even if our tests are pre-planned -- the more likely we are to mistakenly reject the null hypothesis. Do what you can to use methods that do not rely on tests that are designed to be confirmatory.
 
- An example: In the aforementioned special issue, [Benjamin and Berger (2019)](https://doi.org/10.1080/00031305.2018.1543135) suggest using the Bayes factor bound (BFB, Held and Ott 2018) to convey the strength of evidence in favor of an alternative (H1) over the null (H0). Under a wide range of conditions, it is the upper bound on the odds ratio in favor of H1. An alternative they suggest is the upper bound on the probability in favor of H1, Pr<sup>U</sup>(H1\|data), which is just a function of BFB. [I wrote a simple R script to calculate BFB and PR<sup>U</sup>(H1\|data)](https://drive.google.com/open?id=1e2hCQcwq5FpdC4-L2eJwiy49RK6rWB9h). Will ecologists use this or something like it? Only the Shadow knows. More importantly, our results should [<u> convey ecological meaning</u>]
+ An example: In the aforementioned special issue, [Benjamin and Berger (2019)](https://doi.org/10.1080/00031305.2018.1543135) suggest using the Bayes factor bound (BFB, Held and Ott 2018) to convey the strength of evidence in favor of an alternative (H1) over the null (H0). Under a wide range of conditions, it is the upper bound on the odds ratio in favor of H1. An alternative they suggest is the upper bound on the probability in favor of H1, Pr<sup>U</sup>(H1\|data), which is just a function of BFB. [I wrote a simple R script to calculate BFB and PR<sup>U</sup>(H1\|data)](https://drive.google.com/open?id=1e2hCQcwq5FpdC4-L2eJwiy49RK6rWB9h). Will ecologists use this or something like it? Only the Shadow knows. More importantly, our results should convey ecological meaning.
 
 
-## More good practice, in general
+## More advice on good practice
 
-[Butler, Ruth. 2021. Popularity leads to bad habits: Alternatives to“the statistics” routine of significance, “alphabet soup” and dynamiteplots. *Annals of Applied Biology*](https://doi-org.proxy.lib.miamioh.edu/10.1111/aab.12734).
+Butler, Ruth. 2021. Popularity leads to bad habits: Alternatives to "the statistics" routine of significance, "alphabet soup" and dynamite plots. [*Annals of Applied Biology*, 180, 182-195.](https://doi-org.proxy.lib.miamioh.edu/10.1111/aab.12734){target="_blank"}.
 
-[Popovic, G., Mason, T. J., Drobniak, S. M., Marques, T. A., Potts, J.,
+Popovic, G., Mason, T. J., Drobniak, S. M., Marques, T. A., Potts, J.,
 Joo, R., Altwegg, R., Burns, C. C. I., McCarthy, M. A., Johnston, A.,
 Nakagawa, S., McMillan, L., Devarajan, K., Taggart, P. L., Wunderlich,
 A., Mair, M. M., Martínez-Lanfranco, J. A., Lagisz, M., & Pottier, P.
-(2024). Four principles for improved statistical ecology. *Methods in
-Ecology and Evolution*, 15, 266–281.](https://doi-org.proxy.lib.miamioh.edu/10.1111/2041-210X.14270)
+(2024). Four principles for improved statistical ecology. [*Methods in
+Ecology and Evolution*, 15, 266–281.](https://doi-org.proxy.lib.miamioh.edu/10.1111/2041-210X.14270){target="_blank"}
 
 
 # Reporting Methods:  Say what you did, not what software functions you used.
@@ -130,7 +134,7 @@ Put the following information into either the text or table of the Methods or a 
 
 1. The model (likelihood and priors)
 1. How you estimated the parameters of the model (i.e., ran the model)
-   a. State the method (MCMC, quadratic approximation, MLE, etc.)
+   a. State the method (MCMC, quadratic approximation, etc.)
    a. Cite the core R or Python version (use `citation()` # for R Core Team)
    a. Cite any packages that were central to the analysis. Find the citation using, e.g., `citation(package="rstan")`.
    a. The number of MCMC chains, iterations per chain, and the amount of warm-up for Stan or burn-in for BUGS/JAGS.
@@ -139,7 +143,12 @@ Put the following information into either the text or table of the Methods or a 
    a. Overall for chains, trace plots, trace-rank plots, or the graphical test of uniformity (Sailynoja et al. 2022).
 1. How you checked assumptions of the *model* (e.g., error distribution and homogeneity of variances, etc.)
    a. Standard residual plots: graphical checks and statistical tests of relevant residuals or,
-   a. Scaled residual plots and tests of assumptions e.g., homogeneity of variances using scaled residuals. See the wonderful DHARMa package: Hartig, F., 2024. DHARMa: Residual Diagnostics for Hierarchical (Multi-Level/Mixed) Regression Models. doi:10.32614
+   a. Scaled residual plots and tests of assumptions e.g., homogeneity of variances using scaled residuals. For help with this in R, consider these packages:
+      a. Lüdecke et al., 2021. performance: An R Package for Assessment,
+  Comparison and Testing of Statistical Models. Journal of Open Source
+  Software, 6(60), 3139. https://doi.org/10.21105/joss.03139.
+      a. Hartig, F., 2024. DHARMa: Residual Diagnostics for Hierarchical (Multi-Level/Mixed) Regression Models. doi:10.32614.
+
 
 
 ### For a very thorough list of considerations
@@ -150,7 +159,7 @@ See Kruschke,John K. [Bayesian Analysis Reporting Guidelines.” *Nature HumanBe
 
  If you use R, cite it.
 
- If you use R, use the correct citation.
+ If you use R, use the correct citation and include it in your *references cited* section.
 
 ## When you use R, use citation()
 
@@ -163,12 +172,14 @@ See Kruschke,John K. [Bayesian Analysis Reporting Guidelines.” *Nature HumanBe
  \> `citation(package = "nlme")`
 
  and it will give you the source you should cite.
+ 
+ Include all relevant citations with your other references.
 
- People tend to cite R packages that help generate quantitative results and not cite packages used for display. Ask yourself, do you cite Adobe Photoshop™ if you use it to make a pretty graphic? Do you cite Microsoft Word™ when you write your manuscript? Your call.
+People tend to cite R packages that help generate quantitative results and not cite packages used for display. Ask yourself, do you cite Adobe Photoshop™ if you use it to make a pretty graphic? Do you cite Microsoft Word™ when you write your manuscript? Your call.
 
 ### You should not cite RStudio (or Positron or Jupyter Notebook)
 
-RStudio is just a GUI, or wrapper, for R, albeit a really useful one. When you download RStudio, you are not downloading R. To cite RStudio might be like citing Microsoft Word for generating ideas. Citing RStudio might be like citing the Mac OS or Windows, "All statistics were performed using Windows 8.0.3." The operating system or GUI version you use does not usually matter, with some important exceptions that we discuss next.
+RStudio is just a GUI, or wrapper, for R, albeit a really useful one. When you download RStudio, you are not downloading R. To cite RStudio might be like citing Microsoft Word for generating ideas. Citing RStudio might be like citing the Mac OS or Windows, "All statistics were performed using Windows 8.0.3." The operating system or GUI version you use does not *usually* matter, with some important exceptions that we discuss next.
 
 There are some very limited exceptions to the "Do not cite RStudio" rule. The only exception is if you are publishing in a data-specific or models-specific journal in which you must list which version of RStudio and the computer operating system on which you tested your own software. Any time you *test software*, you should cite the underlying hardware and software you use.
 
@@ -213,3 +224,11 @@ A credible source for many of these ideas and more:
 - regression diagnostics
 
 and much, much more.
+
+## In fine
+The main point of statistical modeling is to help us understand the world around, and sometimes other worlds too. When you are finished with your modeling, and starting to write about what it told you, remember to 
+
+1. convey what you learned in terms of the world around you, and 
+1. always give credit to others.
+
+Happy journey.
