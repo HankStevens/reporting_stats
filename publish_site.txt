@@ -1,0 +1,4 @@
+quarto render
+git add docs/
+git commit -m "Render updated reporting.html"
+git push origin main

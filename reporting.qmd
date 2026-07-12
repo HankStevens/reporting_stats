@@ -225,10 +225,12 @@ A credible source for many of these ideas and more:
 
 and much, much more.
 
-## In fine
-The main point of statistical modeling is to help us understand the world around, and sometimes other worlds too. When you are finished with your modeling, and starting to write about what it told you, remember to 
+# In fine
+The main point of statistical modeling is to help us understand the world around us, and sometimes other worlds too. When you are finished with your modeling, and write about what your modeling told you, remember to 
 
-1. convey what you learned in terms of the world around you, and 
+1. tell your reader what you did,
+1. convince your reader that what you did was appropriate and reasonable,
+1. convey what you learned in terms of the real world, and 
 1. always give credit to others.
 
 Happy journey.
